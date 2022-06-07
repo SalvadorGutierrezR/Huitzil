@@ -1,0 +1,5417 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "name": "token_addr",
+          "type": "address"
+        },
+        {
+          "name": "token_quantity",
+          "type": "uint256"
+        }
+      ],
+      "name": "initiate",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ethToTokens",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "sell_quantity",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokensToEth",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ownerWithdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalEthQty",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalTokenQty",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "invariant",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "0": "contracts/Market.vy"
+  },
+  "ast": {
+    "ast_type": "Module",
+    "body": [
+      {
+        "alias": null,
+        "ast_type": "ImportFrom",
+        "col_offset": 0,
+        "end_col_offset": 34,
+        "end_lineno": 2,
+        "level": 0,
+        "lineno": 2,
+        "module": "vyper.interfaces",
+        "name": "ERC20",
+        "node_id": 1,
+        "src": "18:34:0"
+      },
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Name",
+              "col_offset": 20,
+              "end_col_offset": 27,
+              "end_lineno": 5,
+              "id": "uint256",
+              "lineno": 5,
+              "node_id": 9,
+              "src": "75:7:0"
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 13,
+          "end_col_offset": 28,
+          "end_lineno": 5,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 13,
+            "end_col_offset": 19,
+            "end_lineno": 5,
+            "id": "public",
+            "lineno": 5,
+            "node_id": 7,
+            "src": "68:6:0"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 5,
+          "node_id": 6,
+          "src": "68:15:0"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 28,
+        "end_lineno": 5,
+        "lineno": 5,
+        "node_id": 3,
+        "simple": 1,
+        "src": "55:28:0",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 11,
+          "end_lineno": 5,
+          "id": "totalEthQty",
+          "lineno": 5,
+          "node_id": 4,
+          "src": "55:11:0"
+        },
+        "value": null
+      },
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Name",
+              "col_offset": 22,
+              "end_col_offset": 29,
+              "end_lineno": 6,
+              "id": "uint256",
+              "lineno": 6,
+              "node_id": 17,
+              "src": "106:7:0"
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 15,
+          "end_col_offset": 30,
+          "end_lineno": 6,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 15,
+            "end_col_offset": 21,
+            "end_lineno": 6,
+            "id": "public",
+            "lineno": 6,
+            "node_id": 15,
+            "src": "99:6:0"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 6,
+          "node_id": 14,
+          "src": "99:15:0"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 30,
+        "end_lineno": 6,
+        "lineno": 6,
+        "node_id": 11,
+        "simple": 1,
+        "src": "84:30:0",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 13,
+          "end_lineno": 6,
+          "id": "totalTokenQty",
+          "lineno": 6,
+          "node_id": 12,
+          "src": "84:13:0"
+        },
+        "value": null
+      },
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Name",
+              "col_offset": 18,
+              "end_col_offset": 25,
+              "end_lineno": 9,
+              "id": "uint256",
+              "lineno": 9,
+              "node_id": 25,
+              "src": "235:7:0"
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 11,
+          "end_col_offset": 26,
+          "end_lineno": 9,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 11,
+            "end_col_offset": 17,
+            "end_lineno": 9,
+            "id": "public",
+            "lineno": 9,
+            "node_id": 23,
+            "src": "228:6:0"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 9,
+          "node_id": 22,
+          "src": "228:15:0"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 26,
+        "end_lineno": 9,
+        "lineno": 9,
+        "node_id": 19,
+        "simple": 1,
+        "src": "217:26:0",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 9,
+          "end_lineno": 9,
+          "id": "invariant",
+          "lineno": 9,
+          "node_id": 20,
+          "src": "217:9:0"
+        },
+        "value": null
+      },
+      {
+        "annotation": {
+          "ast_type": "Name",
+          "col_offset": 15,
+          "end_col_offset": 20,
+          "end_lineno": 10,
+          "id": "ERC20",
+          "lineno": 10,
+          "node_id": 30,
+          "src": "259:5:0"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 20,
+        "end_lineno": 10,
+        "lineno": 10,
+        "node_id": 27,
+        "simple": 1,
+        "src": "244:20:0",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 13,
+          "end_lineno": 10,
+          "id": "token_address",
+          "lineno": 10,
+          "node_id": 28,
+          "src": "244:13:0"
+        },
+        "value": null
+      },
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Name",
+              "col_offset": 14,
+              "end_col_offset": 21,
+              "end_lineno": 11,
+              "id": "address",
+              "lineno": 11,
+              "node_id": 38,
+              "src": "279:7:0"
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 7,
+          "end_col_offset": 22,
+          "end_lineno": 11,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 7,
+            "end_col_offset": 13,
+            "end_lineno": 11,
+            "id": "public",
+            "lineno": 11,
+            "node_id": 36,
+            "src": "272:6:0"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 11,
+          "node_id": 35,
+          "src": "272:15:0"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 22,
+        "end_lineno": 11,
+        "lineno": 11,
+        "node_id": 32,
+        "simple": 1,
+        "src": "265:22:0",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 5,
+          "end_lineno": 11,
+          "id": "owner",
+          "lineno": 11,
+          "node_id": 33,
+          "src": "265:5:0"
+        },
+        "value": null
+      },
+      {
+        "args": {
+          "args": [
+            {
+              "annotation": {
+                "ast_type": "Name",
+                "col_offset": 25,
+                "end_col_offset": 32,
+                "end_lineno": 17,
+                "id": "address",
+                "lineno": 17,
+                "node_id": 43,
+                "src": "434:7:0"
+              },
+              "arg": "token_addr",
+              "ast_type": "arg",
+              "col_offset": 13,
+              "end_col_offset": 32,
+              "end_lineno": 17,
+              "lineno": 17,
+              "node_id": 42,
+              "src": "422:19:0"
+            },
+            {
+              "annotation": {
+                "ast_type": "Name",
+                "col_offset": 50,
+                "end_col_offset": 57,
+                "end_lineno": 17,
+                "id": "uint256",
+                "lineno": 17,
+                "node_id": 46,
+                "src": "459:7:0"
+              },
+              "arg": "token_quantity",
+              "ast_type": "arg",
+              "col_offset": 34,
+              "end_col_offset": 57,
+              "end_lineno": 17,
+              "lineno": 17,
+              "node_id": 45,
+              "src": "443:23:0"
+            }
+          ],
+          "ast_type": "arguments",
+          "col_offset": 13,
+          "default": null,
+          "defaults": [],
+          "end_col_offset": 57,
+          "end_lineno": 17,
+          "lineno": 17,
+          "node_id": 41,
+          "src": "422:44:0"
+        },
+        "ast_type": "FunctionDef",
+        "body": [
+          {
+            "ast_type": "Assert",
+            "col_offset": 4,
+            "end_col_offset": 30,
+            "end_lineno": 18,
+            "lineno": 18,
+            "msg": null,
+            "node_id": 48,
+            "src": "473:26:0",
+            "test": {
+              "ast_type": "Compare",
+              "col_offset": 11,
+              "end_col_offset": 30,
+              "end_lineno": 18,
+              "left": {
+                "ast_type": "Attribute",
+                "attr": "invariant",
+                "col_offset": 11,
+                "end_col_offset": 25,
+                "end_lineno": 18,
+                "lineno": 18,
+                "node_id": 50,
+                "src": "480:14:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 11,
+                  "end_col_offset": 15,
+                  "end_lineno": 18,
+                  "id": "self",
+                  "lineno": 18,
+                  "node_id": 51,
+                  "src": "480:4:0"
+                }
+              },
+              "lineno": 18,
+              "node_id": 49,
+              "op": {
+                "ast_type": "Eq",
+                "col_offset": 11,
+                "end_col_offset": 30,
+                "end_lineno": 18,
+                "lineno": 18,
+                "node_id": 317,
+                "src": "480:19:0"
+              },
+              "right": {
+                "ast_type": "Int",
+                "col_offset": 29,
+                "end_col_offset": 30,
+                "end_lineno": 18,
+                "lineno": 18,
+                "node_id": 55,
+                "src": "498:1:0",
+                "value": 0
+              },
+              "src": "480:19:0"
+            }
+          },
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 42,
+            "end_lineno": 19,
+            "lineno": 19,
+            "node_id": 56,
+            "src": "504:38:0",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "token_address",
+              "col_offset": 4,
+              "end_col_offset": 22,
+              "end_lineno": 19,
+              "lineno": 19,
+              "node_id": 57,
+              "src": "504:18:0",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 19,
+                "id": "self",
+                "lineno": 19,
+                "node_id": 58,
+                "src": "504:4:0"
+              }
+            },
+            "value": {
+              "args": [
+                {
+                  "ast_type": "Name",
+                  "col_offset": 31,
+                  "end_col_offset": 41,
+                  "end_lineno": 19,
+                  "id": "token_addr",
+                  "lineno": 19,
+                  "node_id": 64,
+                  "src": "531:10:0"
+                }
+              ],
+              "ast_type": "Call",
+              "col_offset": 25,
+              "end_col_offset": 42,
+              "end_lineno": 19,
+              "func": {
+                "ast_type": "Name",
+                "col_offset": 25,
+                "end_col_offset": 30,
+                "end_lineno": 19,
+                "id": "ERC20",
+                "lineno": 19,
+                "node_id": 62,
+                "src": "525:5:0"
+              },
+              "keyword": null,
+              "keywords": [],
+              "lineno": 19,
+              "node_id": 61,
+              "src": "525:17:0"
+            }
+          },
+          {
+            "ast_type": "Expr",
+            "col_offset": 4,
+            "end_col_offset": 69,
+            "end_lineno": 20,
+            "lineno": 20,
+            "node_id": 66,
+            "src": "547:65:0",
+            "value": {
+              "args": [
+                {
+                  "ast_type": "Attribute",
+                  "attr": "sender",
+                  "col_offset": 36,
+                  "end_col_offset": 46,
+                  "end_lineno": 20,
+                  "lineno": 20,
+                  "node_id": 74,
+                  "src": "579:10:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 36,
+                    "end_col_offset": 39,
+                    "end_lineno": 20,
+                    "id": "msg",
+                    "lineno": 20,
+                    "node_id": 75,
+                    "src": "579:3:0"
+                  }
+                },
+                {
+                  "ast_type": "Name",
+                  "col_offset": 48,
+                  "end_col_offset": 52,
+                  "end_lineno": 20,
+                  "id": "self",
+                  "lineno": 20,
+                  "node_id": 78,
+                  "src": "591:4:0"
+                },
+                {
+                  "ast_type": "Name",
+                  "col_offset": 54,
+                  "end_col_offset": 68,
+                  "end_lineno": 20,
+                  "id": "token_quantity",
+                  "lineno": 20,
+                  "node_id": 80,
+                  "src": "597:14:0"
+                }
+              ],
+              "ast_type": "Call",
+              "col_offset": 4,
+              "end_col_offset": 69,
+              "end_lineno": 20,
+              "func": {
+                "ast_type": "Attribute",
+                "attr": "transferFrom",
+                "col_offset": 4,
+                "end_col_offset": 35,
+                "end_lineno": 20,
+                "lineno": 20,
+                "node_id": 68,
+                "src": "547:31:0",
+                "value": {
+                  "ast_type": "Attribute",
+                  "attr": "token_address",
+                  "col_offset": 4,
+                  "end_col_offset": 22,
+                  "end_lineno": 20,
+                  "lineno": 20,
+                  "node_id": 69,
+                  "src": "547:18:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 4,
+                    "end_col_offset": 8,
+                    "end_lineno": 20,
+                    "id": "self",
+                    "lineno": 20,
+                    "node_id": 70,
+                    "src": "547:4:0"
+                  }
+                }
+              },
+              "keyword": null,
+              "keywords": [],
+              "lineno": 20,
+              "node_id": 67,
+              "src": "547:65:0"
+            }
+          },
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 27,
+            "end_lineno": 21,
+            "lineno": 21,
+            "node_id": 82,
+            "src": "617:23:0",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "owner",
+              "col_offset": 4,
+              "end_col_offset": 14,
+              "end_lineno": 21,
+              "lineno": 21,
+              "node_id": 83,
+              "src": "617:10:0",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 21,
+                "id": "self",
+                "lineno": 21,
+                "node_id": 84,
+                "src": "617:4:0"
+              }
+            },
+            "value": {
+              "ast_type": "Attribute",
+              "attr": "sender",
+              "col_offset": 17,
+              "end_col_offset": 27,
+              "end_lineno": 21,
+              "lineno": 21,
+              "node_id": 87,
+              "src": "630:10:0",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 17,
+                "end_col_offset": 20,
+                "end_lineno": 21,
+                "id": "msg",
+                "lineno": 21,
+                "node_id": 88,
+                "src": "630:3:0"
+              }
+            }
+          },
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 32,
+            "end_lineno": 22,
+            "lineno": 22,
+            "node_id": 91,
+            "src": "645:28:0",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "totalEthQty",
+              "col_offset": 4,
+              "end_col_offset": 20,
+              "end_lineno": 22,
+              "lineno": 22,
+              "node_id": 92,
+              "src": "645:16:0",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 22,
+                "id": "self",
+                "lineno": 22,
+                "node_id": 93,
+                "src": "645:4:0"
+              }
+            },
+            "value": {
+              "ast_type": "Attribute",
+              "attr": "value",
+              "col_offset": 23,
+              "end_col_offset": 32,
+              "end_lineno": 22,
+              "lineno": 22,
+              "node_id": 96,
+              "src": "664:9:0",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 23,
+                "end_col_offset": 26,
+                "end_lineno": 22,
+                "id": "msg",
+                "lineno": 22,
+                "node_id": 97,
+                "src": "664:3:0"
+              }
+            }
+          },
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 39,
+            "end_lineno": 23,
+            "lineno": 23,
+            "node_id": 100,
+            "src": "678:35:0",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "totalTokenQty",
+              "col_offset": 4,
+              "end_col_offset": 22,
+              "end_lineno": 23,
+              "lineno": 23,
+              "node_id": 101,
+              "src": "678:18:0",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 23,
+                "id": "self",
+                "lineno": 23,
+                "node_id": 102,
+                "src": "678:4:0"
+              }
+            },
+            "value": {
+              "ast_type": "Name",
+              "col_offset": 25,
+              "end_col_offset": 39,
+              "end_lineno": 23,
+              "id": "token_quantity",
+              "lineno": 23,
+              "node_id": 105,
+              "src": "699:14:0"
+            }
+          },
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 47,
+            "end_lineno": 24,
+            "lineno": 24,
+            "node_id": 107,
+            "src": "718:43:0",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "invariant",
+              "col_offset": 4,
+              "end_col_offset": 18,
+              "end_lineno": 24,
+              "lineno": 24,
+              "node_id": 108,
+              "src": "718:14:0",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 24,
+                "id": "self",
+                "lineno": 24,
+                "node_id": 109,
+                "src": "718:4:0"
+              }
+            },
+            "value": {
+              "ast_type": "BinOp",
+              "col_offset": 21,
+              "end_col_offset": 47,
+              "end_lineno": 24,
+              "left": {
+                "ast_type": "Attribute",
+                "attr": "value",
+                "col_offset": 21,
+                "end_col_offset": 30,
+                "end_lineno": 24,
+                "lineno": 24,
+                "node_id": 113,
+                "src": "735:9:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 21,
+                  "end_col_offset": 24,
+                  "end_lineno": 24,
+                  "id": "msg",
+                  "lineno": 24,
+                  "node_id": 114,
+                  "src": "735:3:0"
+                }
+              },
+              "lineno": 24,
+              "node_id": 112,
+              "op": {
+                "ast_type": "Mult",
+                "col_offset": 21,
+                "end_col_offset": 47,
+                "end_lineno": 24,
+                "lineno": 24,
+                "node_id": 117,
+                "src": "735:26:0"
+              },
+              "right": {
+                "ast_type": "Name",
+                "col_offset": 33,
+                "end_col_offset": 47,
+                "end_lineno": 24,
+                "id": "token_quantity",
+                "lineno": 24,
+                "node_id": 118,
+                "src": "747:14:0"
+              },
+              "src": "735:26:0"
+            }
+          },
+          {
+            "ast_type": "Assert",
+            "col_offset": 4,
+            "end_col_offset": 29,
+            "end_lineno": 25,
+            "lineno": 25,
+            "msg": null,
+            "node_id": 120,
+            "src": "766:25:0",
+            "test": {
+              "ast_type": "Compare",
+              "col_offset": 11,
+              "end_col_offset": 29,
+              "end_lineno": 25,
+              "left": {
+                "ast_type": "Attribute",
+                "attr": "invariant",
+                "col_offset": 11,
+                "end_col_offset": 25,
+                "end_lineno": 25,
+                "lineno": 25,
+                "node_id": 122,
+                "src": "773:14:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 11,
+                  "end_col_offset": 15,
+                  "end_lineno": 25,
+                  "id": "self",
+                  "lineno": 25,
+                  "node_id": 123,
+                  "src": "773:4:0"
+                }
+              },
+              "lineno": 25,
+              "node_id": 121,
+              "op": {
+                "ast_type": "Gt",
+                "col_offset": 11,
+                "end_col_offset": 29,
+                "end_lineno": 25,
+                "lineno": 25,
+                "node_id": 126,
+                "src": "773:18:0"
+              },
+              "right": {
+                "ast_type": "Int",
+                "col_offset": 28,
+                "end_col_offset": 29,
+                "end_lineno": 25,
+                "lineno": 25,
+                "node_id": 127,
+                "src": "790:1:0",
+                "value": 0
+              },
+              "src": "773:18:0"
+            }
+          }
+        ],
+        "col_offset": 0,
+        "decorator_list": [
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 9,
+            "end_lineno": 15,
+            "id": "external",
+            "lineno": 15,
+            "node_id": 128,
+            "src": "391:8:0"
+          },
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 8,
+            "end_lineno": 16,
+            "id": "payable",
+            "lineno": 16,
+            "node_id": 130,
+            "src": "401:7:0"
+          }
+        ],
+        "doc_string": null,
+        "end_col_offset": 29,
+        "end_lineno": 25,
+        "lineno": 17,
+        "name": "initiate",
+        "node_id": 40,
+        "pos": null,
+        "returns": null,
+        "src": "409:382:0"
+      },
+      {
+        "args": {
+          "args": [],
+          "ast_type": "arguments",
+          "col_offset": 0,
+          "default": null,
+          "defaults": [],
+          "end_col_offset": 3,
+          "end_lineno": 30,
+          "lineno": 30,
+          "node_id": 133,
+          "src": "879:3:0"
+        },
+        "ast_type": "FunctionDef",
+        "body": [
+          {
+            "annotation": {
+              "ast_type": "Name",
+              "col_offset": 9,
+              "end_col_offset": 16,
+              "end_lineno": 31,
+              "id": "uint256",
+              "lineno": 31,
+              "node_id": 137,
+              "src": "907:7:0"
+            },
+            "ast_type": "AnnAssign",
+            "col_offset": 4,
+            "end_col_offset": 34,
+            "end_lineno": 31,
+            "lineno": 31,
+            "node_id": 134,
+            "simple": 1,
+            "src": "902:30:0",
+            "target": {
+              "ast_type": "Name",
+              "col_offset": 4,
+              "end_col_offset": 7,
+              "end_lineno": 31,
+              "id": "fee",
+              "lineno": 31,
+              "node_id": 135,
+              "src": "902:3:0"
+            },
+            "value": {
+              "ast_type": "BinOp",
+              "col_offset": 19,
+              "end_col_offset": 34,
+              "end_lineno": 31,
+              "left": {
+                "ast_type": "Attribute",
+                "attr": "value",
+                "col_offset": 19,
+                "end_col_offset": 28,
+                "end_lineno": 31,
+                "lineno": 31,
+                "node_id": 140,
+                "src": "917:9:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 19,
+                  "end_col_offset": 22,
+                  "end_lineno": 31,
+                  "id": "msg",
+                  "lineno": 31,
+                  "node_id": 141,
+                  "src": "917:3:0"
+                }
+              },
+              "lineno": 31,
+              "node_id": 139,
+              "op": {
+                "ast_type": "Div",
+                "col_offset": 19,
+                "end_col_offset": 34,
+                "end_lineno": 31,
+                "lineno": 31,
+                "node_id": 267,
+                "src": "917:15:0"
+              },
+              "right": {
+                "ast_type": "Int",
+                "col_offset": 31,
+                "end_col_offset": 34,
+                "end_lineno": 31,
+                "lineno": 31,
+                "node_id": 145,
+                "src": "929:3:0",
+                "value": 500
+              },
+              "src": "917:15:0"
+            }
+          },
+          {
+            "annotation": {
+              "ast_type": "Name",
+              "col_offset": 21,
+              "end_col_offset": 28,
+              "end_lineno": 32,
+              "id": "uint256",
+              "lineno": 32,
+              "node_id": 149,
+              "src": "954:7:0"
+            },
+            "ast_type": "AnnAssign",
+            "col_offset": 4,
+            "end_col_offset": 46,
+            "end_lineno": 32,
+            "lineno": 32,
+            "node_id": 146,
+            "simple": 1,
+            "src": "937:42:0",
+            "target": {
+              "ast_type": "Name",
+              "col_offset": 4,
+              "end_col_offset": 19,
+              "end_lineno": 32,
+              "id": "eth_in_purchase",
+              "lineno": 32,
+              "node_id": 147,
+              "src": "937:15:0"
+            },
+            "value": {
+              "ast_type": "BinOp",
+              "col_offset": 31,
+              "end_col_offset": 46,
+              "end_lineno": 32,
+              "left": {
+                "ast_type": "Attribute",
+                "attr": "value",
+                "col_offset": 31,
+                "end_col_offset": 40,
+                "end_lineno": 32,
+                "lineno": 32,
+                "node_id": 152,
+                "src": "964:9:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 31,
+                  "end_col_offset": 34,
+                  "end_lineno": 32,
+                  "id": "msg",
+                  "lineno": 32,
+                  "node_id": 153,
+                  "src": "964:3:0"
+                }
+              },
+              "lineno": 32,
+              "node_id": 151,
+              "op": {
+                "ast_type": "Sub",
+                "col_offset": 31,
+                "end_col_offset": 46,
+                "end_lineno": 32,
+                "lineno": 32,
+                "node_id": 280,
+                "src": "964:15:0"
+              },
+              "right": {
+                "ast_type": "Name",
+                "col_offset": 43,
+                "end_col_offset": 46,
+                "end_lineno": 32,
+                "id": "fee",
+                "lineno": 32,
+                "node_id": 157,
+                "src": "976:3:0"
+              },
+              "src": "964:15:0"
+            }
+          },
+          {
+            "annotation": {
+              "ast_type": "Name",
+              "col_offset": 19,
+              "end_col_offset": 26,
+              "end_lineno": 33,
+              "id": "uint256",
+              "lineno": 33,
+              "node_id": 162,
+              "src": "999:7:0"
+            },
+            "ast_type": "AnnAssign",
+            "col_offset": 4,
+            "end_col_offset": 63,
+            "end_lineno": 33,
+            "lineno": 33,
+            "node_id": 159,
+            "simple": 1,
+            "src": "984:59:0",
+            "target": {
+              "ast_type": "Name",
+              "col_offset": 4,
+              "end_col_offset": 17,
+              "end_lineno": 33,
+              "id": "new_total_eth",
+              "lineno": 33,
+              "node_id": 160,
+              "src": "984:13:0"
+            },
+            "value": {
+              "ast_type": "BinOp",
+              "col_offset": 29,
+              "end_col_offset": 63,
+              "end_lineno": 33,
+              "left": {
+                "ast_type": "Attribute",
+                "attr": "totalEthQty",
+                "col_offset": 29,
+                "end_col_offset": 45,
+                "end_lineno": 33,
+                "lineno": 33,
+                "node_id": 165,
+                "src": "1009:16:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 29,
+                  "end_col_offset": 33,
+                  "end_lineno": 33,
+                  "id": "self",
+                  "lineno": 33,
+                  "node_id": 166,
+                  "src": "1009:4:0"
+                }
+              },
+              "lineno": 33,
+              "node_id": 164,
+              "op": {
+                "ast_type": "Add",
+                "col_offset": 29,
+                "end_col_offset": 63,
+                "end_lineno": 33,
+                "lineno": 33,
+                "node_id": 254,
+                "src": "1009:34:0"
+              },
+              "right": {
+                "ast_type": "Name",
+                "col_offset": 48,
+                "end_col_offset": 63,
+                "end_lineno": 33,
+                "id": "eth_in_purchase",
+                "lineno": 33,
+                "node_id": 170,
+                "src": "1028:15:0"
+              },
+              "src": "1009:34:0"
+            }
+          },
+          {
+            "annotation": {
+              "ast_type": "Name",
+              "col_offset": 22,
+              "end_col_offset": 29,
+              "end_lineno": 34,
+              "id": "uint256",
+              "lineno": 34,
+              "node_id": 175,
+              "src": "1066:7:0"
+            },
+            "ast_type": "AnnAssign",
+            "col_offset": 4,
+            "end_col_offset": 62,
+            "end_lineno": 34,
+            "lineno": 34,
+            "node_id": 172,
+            "simple": 1,
+            "src": "1048:58:0",
+            "target": {
+              "ast_type": "Name",
+              "col_offset": 4,
+              "end_col_offset": 20,
+              "end_lineno": 34,
+              "id": "new_total_tokens",
+              "lineno": 34,
+              "node_id": 173,
+              "src": "1048:16:0"
+            },
+            "value": {
+              "ast_type": "BinOp",
+              "col_offset": 32,
+              "end_col_offset": 62,
+              "end_lineno": 34,
+              "left": {
+                "ast_type": "Attribute",
+                "attr": "invariant",
+                "col_offset": 32,
+                "end_col_offset": 46,
+                "end_lineno": 34,
+                "lineno": 34,
+                "node_id": 178,
+                "src": "1076:14:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 32,
+                  "end_col_offset": 36,
+                  "end_lineno": 34,
+                  "id": "self",
+                  "lineno": 34,
+                  "node_id": 179,
+                  "src": "1076:4:0"
+                }
+              },
+              "lineno": 34,
+              "node_id": 177,
+              "op": {
+                "ast_type": "Div",
+                "col_offset": 32,
+                "end_col_offset": 62,
+                "end_lineno": 34,
+                "lineno": 34,
+                "node_id": 267,
+                "src": "1076:30:0"
+              },
+              "right": {
+                "ast_type": "Name",
+                "col_offset": 49,
+                "end_col_offset": 62,
+                "end_lineno": 34,
+                "id": "new_total_eth",
+                "lineno": 34,
+                "node_id": 183,
+                "src": "1093:13:0"
+              },
+              "src": "1076:30:0"
+            }
+          },
+          {
+            "ast_type": "Expr",
+            "col_offset": 4,
+            "end_col_offset": 82,
+            "end_lineno": 35,
+            "lineno": 35,
+            "node_id": 185,
+            "src": "1111:78:0",
+            "value": {
+              "args": [
+                {
+                  "ast_type": "Attribute",
+                  "attr": "sender",
+                  "col_offset": 32,
+                  "end_col_offset": 42,
+                  "end_lineno": 35,
+                  "lineno": 35,
+                  "node_id": 193,
+                  "src": "1139:10:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 32,
+                    "end_col_offset": 35,
+                    "end_lineno": 35,
+                    "id": "msg",
+                    "lineno": 35,
+                    "node_id": 194,
+                    "src": "1139:3:0"
+                  }
+                },
+                {
+                  "ast_type": "BinOp",
+                  "col_offset": 44,
+                  "end_col_offset": 81,
+                  "end_lineno": 35,
+                  "left": {
+                    "ast_type": "Attribute",
+                    "attr": "totalTokenQty",
+                    "col_offset": 44,
+                    "end_col_offset": 62,
+                    "end_lineno": 35,
+                    "lineno": 35,
+                    "node_id": 198,
+                    "src": "1151:18:0",
+                    "value": {
+                      "ast_type": "Name",
+                      "col_offset": 44,
+                      "end_col_offset": 48,
+                      "end_lineno": 35,
+                      "id": "self",
+                      "lineno": 35,
+                      "node_id": 199,
+                      "src": "1151:4:0"
+                    }
+                  },
+                  "lineno": 35,
+                  "node_id": 197,
+                  "op": {
+                    "ast_type": "Sub",
+                    "col_offset": 44,
+                    "end_col_offset": 81,
+                    "end_lineno": 35,
+                    "lineno": 35,
+                    "node_id": 280,
+                    "src": "1151:37:0"
+                  },
+                  "right": {
+                    "ast_type": "Name",
+                    "col_offset": 65,
+                    "end_col_offset": 81,
+                    "end_lineno": 35,
+                    "id": "new_total_tokens",
+                    "lineno": 35,
+                    "node_id": 203,
+                    "src": "1172:16:0"
+                  },
+                  "src": "1151:37:0"
+                }
+              ],
+              "ast_type": "Call",
+              "col_offset": 4,
+              "end_col_offset": 82,
+              "end_lineno": 35,
+              "func": {
+                "ast_type": "Attribute",
+                "attr": "transfer",
+                "col_offset": 4,
+                "end_col_offset": 31,
+                "end_lineno": 35,
+                "lineno": 35,
+                "node_id": 187,
+                "src": "1111:27:0",
+                "value": {
+                  "ast_type": "Attribute",
+                  "attr": "token_address",
+                  "col_offset": 4,
+                  "end_col_offset": 22,
+                  "end_lineno": 35,
+                  "lineno": 35,
+                  "node_id": 188,
+                  "src": "1111:18:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 4,
+                    "end_col_offset": 8,
+                    "end_lineno": 35,
+                    "id": "self",
+                    "lineno": 35,
+                    "node_id": 189,
+                    "src": "1111:4:0"
+                  }
+                }
+              },
+              "keyword": null,
+              "keywords": [],
+              "lineno": 35,
+              "node_id": 186,
+              "src": "1111:78:0"
+            }
+          },
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 36,
+            "end_lineno": 36,
+            "lineno": 36,
+            "node_id": 205,
+            "src": "1194:32:0",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "totalEthQty",
+              "col_offset": 4,
+              "end_col_offset": 20,
+              "end_lineno": 36,
+              "lineno": 36,
+              "node_id": 206,
+              "src": "1194:16:0",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 36,
+                "id": "self",
+                "lineno": 36,
+                "node_id": 207,
+                "src": "1194:4:0"
+              }
+            },
+            "value": {
+              "ast_type": "Name",
+              "col_offset": 23,
+              "end_col_offset": 36,
+              "end_lineno": 36,
+              "id": "new_total_eth",
+              "lineno": 36,
+              "node_id": 210,
+              "src": "1213:13:0"
+            }
+          },
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 41,
+            "end_lineno": 37,
+            "lineno": 37,
+            "node_id": 212,
+            "src": "1231:37:0",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "totalTokenQty",
+              "col_offset": 4,
+              "end_col_offset": 22,
+              "end_lineno": 37,
+              "lineno": 37,
+              "node_id": 213,
+              "src": "1231:18:0",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 37,
+                "id": "self",
+                "lineno": 37,
+                "node_id": 214,
+                "src": "1231:4:0"
+              }
+            },
+            "value": {
+              "ast_type": "Name",
+              "col_offset": 25,
+              "end_col_offset": 41,
+              "end_lineno": 37,
+              "id": "new_total_tokens",
+              "lineno": 37,
+              "node_id": 217,
+              "src": "1252:16:0"
+            }
+          }
+        ],
+        "col_offset": 0,
+        "decorator_list": [
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 9,
+            "end_lineno": 28,
+            "id": "external",
+            "lineno": 28,
+            "node_id": 219,
+            "src": "861:8:0"
+          },
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 8,
+            "end_lineno": 29,
+            "id": "payable",
+            "lineno": 29,
+            "node_id": 221,
+            "src": "871:7:0"
+          }
+        ],
+        "doc_string": null,
+        "end_col_offset": 41,
+        "end_lineno": 37,
+        "lineno": 30,
+        "name": "ethToTokens",
+        "node_id": 132,
+        "pos": null,
+        "returns": null,
+        "src": "879:389:0"
+      },
+      {
+        "args": {
+          "args": [
+            {
+              "annotation": {
+                "ast_type": "Name",
+                "col_offset": 31,
+                "end_col_offset": 38,
+                "end_lineno": 41,
+                "id": "uint256",
+                "lineno": 41,
+                "node_id": 226,
+                "src": "1364:7:0"
+              },
+              "arg": "sell_quantity",
+              "ast_type": "arg",
+              "col_offset": 16,
+              "end_col_offset": 38,
+              "end_lineno": 41,
+              "lineno": 41,
+              "node_id": 225,
+              "src": "1349:22:0"
+            }
+          ],
+          "ast_type": "arguments",
+          "col_offset": 16,
+          "default": null,
+          "defaults": [],
+          "end_col_offset": 38,
+          "end_lineno": 41,
+          "lineno": 41,
+          "node_id": 224,
+          "src": "1349:22:0"
+        },
+        "ast_type": "FunctionDef",
+        "body": [
+          {
+            "ast_type": "Expr",
+            "col_offset": 4,
+            "end_col_offset": 68,
+            "end_lineno": 42,
+            "lineno": 42,
+            "node_id": 228,
+            "src": "1378:64:0",
+            "value": {
+              "args": [
+                {
+                  "ast_type": "Attribute",
+                  "attr": "sender",
+                  "col_offset": 36,
+                  "end_col_offset": 46,
+                  "end_lineno": 42,
+                  "lineno": 42,
+                  "node_id": 236,
+                  "src": "1410:10:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 36,
+                    "end_col_offset": 39,
+                    "end_lineno": 42,
+                    "id": "msg",
+                    "lineno": 42,
+                    "node_id": 237,
+                    "src": "1410:3:0"
+                  }
+                },
+                {
+                  "ast_type": "Name",
+                  "col_offset": 48,
+                  "end_col_offset": 52,
+                  "end_lineno": 42,
+                  "id": "self",
+                  "lineno": 42,
+                  "node_id": 240,
+                  "src": "1422:4:0"
+                },
+                {
+                  "ast_type": "Name",
+                  "col_offset": 54,
+                  "end_col_offset": 67,
+                  "end_lineno": 42,
+                  "id": "sell_quantity",
+                  "lineno": 42,
+                  "node_id": 242,
+                  "src": "1428:13:0"
+                }
+              ],
+              "ast_type": "Call",
+              "col_offset": 4,
+              "end_col_offset": 68,
+              "end_lineno": 42,
+              "func": {
+                "ast_type": "Attribute",
+                "attr": "transferFrom",
+                "col_offset": 4,
+                "end_col_offset": 35,
+                "end_lineno": 42,
+                "lineno": 42,
+                "node_id": 230,
+                "src": "1378:31:0",
+                "value": {
+                  "ast_type": "Attribute",
+                  "attr": "token_address",
+                  "col_offset": 4,
+                  "end_col_offset": 22,
+                  "end_lineno": 42,
+                  "lineno": 42,
+                  "node_id": 231,
+                  "src": "1378:18:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 4,
+                    "end_col_offset": 8,
+                    "end_lineno": 42,
+                    "id": "self",
+                    "lineno": 42,
+                    "node_id": 232,
+                    "src": "1378:4:0"
+                  }
+                }
+              },
+              "keyword": null,
+              "keywords": [],
+              "lineno": 42,
+              "node_id": 229,
+              "src": "1378:64:0"
+            }
+          },
+          {
+            "annotation": {
+              "ast_type": "Name",
+              "col_offset": 22,
+              "end_col_offset": 29,
+              "end_lineno": 43,
+              "id": "uint256",
+              "lineno": 43,
+              "node_id": 247,
+              "src": "1465:7:0"
+            },
+            "ast_type": "AnnAssign",
+            "col_offset": 4,
+            "end_col_offset": 66,
+            "end_lineno": 43,
+            "lineno": 43,
+            "node_id": 244,
+            "simple": 1,
+            "src": "1447:62:0",
+            "target": {
+              "ast_type": "Name",
+              "col_offset": 4,
+              "end_col_offset": 20,
+              "end_lineno": 43,
+              "id": "new_total_tokens",
+              "lineno": 43,
+              "node_id": 245,
+              "src": "1447:16:0"
+            },
+            "value": {
+              "ast_type": "BinOp",
+              "col_offset": 32,
+              "end_col_offset": 66,
+              "end_lineno": 43,
+              "left": {
+                "ast_type": "Attribute",
+                "attr": "totalTokenQty",
+                "col_offset": 32,
+                "end_col_offset": 50,
+                "end_lineno": 43,
+                "lineno": 43,
+                "node_id": 250,
+                "src": "1475:18:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 32,
+                  "end_col_offset": 36,
+                  "end_lineno": 43,
+                  "id": "self",
+                  "lineno": 43,
+                  "node_id": 251,
+                  "src": "1475:4:0"
+                }
+              },
+              "lineno": 43,
+              "node_id": 249,
+              "op": {
+                "ast_type": "Add",
+                "col_offset": 32,
+                "end_col_offset": 66,
+                "end_lineno": 43,
+                "lineno": 43,
+                "node_id": 254,
+                "src": "1475:34:0"
+              },
+              "right": {
+                "ast_type": "Name",
+                "col_offset": 53,
+                "end_col_offset": 66,
+                "end_lineno": 43,
+                "id": "sell_quantity",
+                "lineno": 43,
+                "node_id": 255,
+                "src": "1496:13:0"
+              },
+              "src": "1475:34:0"
+            }
+          },
+          {
+            "annotation": {
+              "ast_type": "Name",
+              "col_offset": 19,
+              "end_col_offset": 26,
+              "end_lineno": 44,
+              "id": "uint256",
+              "lineno": 44,
+              "node_id": 260,
+              "src": "1529:7:0"
+            },
+            "ast_type": "AnnAssign",
+            "col_offset": 4,
+            "end_col_offset": 62,
+            "end_lineno": 44,
+            "lineno": 44,
+            "node_id": 257,
+            "simple": 1,
+            "src": "1514:58:0",
+            "target": {
+              "ast_type": "Name",
+              "col_offset": 4,
+              "end_col_offset": 17,
+              "end_lineno": 44,
+              "id": "new_total_eth",
+              "lineno": 44,
+              "node_id": 258,
+              "src": "1514:13:0"
+            },
+            "value": {
+              "ast_type": "BinOp",
+              "col_offset": 29,
+              "end_col_offset": 62,
+              "end_lineno": 44,
+              "left": {
+                "ast_type": "Attribute",
+                "attr": "invariant",
+                "col_offset": 29,
+                "end_col_offset": 43,
+                "end_lineno": 44,
+                "lineno": 44,
+                "node_id": 263,
+                "src": "1539:14:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 29,
+                  "end_col_offset": 33,
+                  "end_lineno": 44,
+                  "id": "self",
+                  "lineno": 44,
+                  "node_id": 264,
+                  "src": "1539:4:0"
+                }
+              },
+              "lineno": 44,
+              "node_id": 262,
+              "op": {
+                "ast_type": "Div",
+                "col_offset": 29,
+                "end_col_offset": 62,
+                "end_lineno": 44,
+                "lineno": 44,
+                "node_id": 267,
+                "src": "1539:33:0"
+              },
+              "right": {
+                "ast_type": "Name",
+                "col_offset": 46,
+                "end_col_offset": 62,
+                "end_lineno": 44,
+                "id": "new_total_tokens",
+                "lineno": 44,
+                "node_id": 268,
+                "src": "1556:16:0"
+              },
+              "src": "1539:33:0"
+            }
+          },
+          {
+            "annotation": {
+              "ast_type": "Name",
+              "col_offset": 17,
+              "end_col_offset": 24,
+              "end_lineno": 45,
+              "id": "uint256",
+              "lineno": 45,
+              "node_id": 273,
+              "src": "1590:7:0"
+            },
+            "ast_type": "AnnAssign",
+            "col_offset": 4,
+            "end_col_offset": 59,
+            "end_lineno": 45,
+            "lineno": 45,
+            "node_id": 270,
+            "simple": 1,
+            "src": "1577:55:0",
+            "target": {
+              "ast_type": "Name",
+              "col_offset": 4,
+              "end_col_offset": 15,
+              "end_lineno": 45,
+              "id": "eth_to_send",
+              "lineno": 45,
+              "node_id": 271,
+              "src": "1577:11:0"
+            },
+            "value": {
+              "ast_type": "BinOp",
+              "col_offset": 27,
+              "end_col_offset": 59,
+              "end_lineno": 45,
+              "left": {
+                "ast_type": "Attribute",
+                "attr": "totalEthQty",
+                "col_offset": 27,
+                "end_col_offset": 43,
+                "end_lineno": 45,
+                "lineno": 45,
+                "node_id": 276,
+                "src": "1600:16:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 27,
+                  "end_col_offset": 31,
+                  "end_lineno": 45,
+                  "id": "self",
+                  "lineno": 45,
+                  "node_id": 277,
+                  "src": "1600:4:0"
+                }
+              },
+              "lineno": 45,
+              "node_id": 275,
+              "op": {
+                "ast_type": "Sub",
+                "col_offset": 27,
+                "end_col_offset": 59,
+                "end_lineno": 45,
+                "lineno": 45,
+                "node_id": 280,
+                "src": "1600:32:0"
+              },
+              "right": {
+                "ast_type": "Name",
+                "col_offset": 46,
+                "end_col_offset": 59,
+                "end_lineno": 45,
+                "id": "new_total_eth",
+                "lineno": 45,
+                "node_id": 281,
+                "src": "1619:13:0"
+              },
+              "src": "1600:32:0"
+            }
+          },
+          {
+            "ast_type": "Expr",
+            "col_offset": 4,
+            "end_col_offset": 33,
+            "end_lineno": 46,
+            "lineno": 46,
+            "node_id": 283,
+            "src": "1637:29:0",
+            "value": {
+              "args": [
+                {
+                  "ast_type": "Attribute",
+                  "attr": "sender",
+                  "col_offset": 9,
+                  "end_col_offset": 19,
+                  "end_lineno": 46,
+                  "lineno": 46,
+                  "node_id": 287,
+                  "src": "1642:10:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 9,
+                    "end_col_offset": 12,
+                    "end_lineno": 46,
+                    "id": "msg",
+                    "lineno": 46,
+                    "node_id": 288,
+                    "src": "1642:3:0"
+                  }
+                },
+                {
+                  "ast_type": "Name",
+                  "col_offset": 21,
+                  "end_col_offset": 32,
+                  "end_lineno": 46,
+                  "id": "eth_to_send",
+                  "lineno": 46,
+                  "node_id": 291,
+                  "src": "1654:11:0"
+                }
+              ],
+              "ast_type": "Call",
+              "col_offset": 4,
+              "end_col_offset": 33,
+              "end_lineno": 46,
+              "func": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 46,
+                "id": "send",
+                "lineno": 46,
+                "node_id": 285,
+                "src": "1637:4:0"
+              },
+              "keyword": null,
+              "keywords": [],
+              "lineno": 46,
+              "node_id": 284,
+              "src": "1637:29:0"
+            }
+          },
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 36,
+            "end_lineno": 47,
+            "lineno": 47,
+            "node_id": 293,
+            "src": "1671:32:0",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "totalEthQty",
+              "col_offset": 4,
+              "end_col_offset": 20,
+              "end_lineno": 47,
+              "lineno": 47,
+              "node_id": 294,
+              "src": "1671:16:0",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 47,
+                "id": "self",
+                "lineno": 47,
+                "node_id": 295,
+                "src": "1671:4:0"
+              }
+            },
+            "value": {
+              "ast_type": "Name",
+              "col_offset": 23,
+              "end_col_offset": 36,
+              "end_lineno": 47,
+              "id": "new_total_eth",
+              "lineno": 47,
+              "node_id": 298,
+              "src": "1690:13:0"
+            }
+          },
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 41,
+            "end_lineno": 48,
+            "lineno": 48,
+            "node_id": 300,
+            "src": "1708:37:0",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "totalTokenQty",
+              "col_offset": 4,
+              "end_col_offset": 22,
+              "end_lineno": 48,
+              "lineno": 48,
+              "node_id": 301,
+              "src": "1708:18:0",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 48,
+                "id": "self",
+                "lineno": 48,
+                "node_id": 302,
+                "src": "1708:4:0"
+              }
+            },
+            "value": {
+              "ast_type": "Name",
+              "col_offset": 25,
+              "end_col_offset": 41,
+              "end_lineno": 48,
+              "id": "new_total_tokens",
+              "lineno": 48,
+              "node_id": 305,
+              "src": "1729:16:0"
+            }
+          }
+        ],
+        "col_offset": 0,
+        "decorator_list": [
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 9,
+            "end_lineno": 40,
+            "id": "external",
+            "lineno": 40,
+            "node_id": 307,
+            "src": "1324:8:0"
+          }
+        ],
+        "doc_string": null,
+        "end_col_offset": 41,
+        "end_lineno": 48,
+        "lineno": 41,
+        "name": "tokensToEth",
+        "node_id": 223,
+        "pos": null,
+        "returns": null,
+        "src": "1333:412:0"
+      },
+      {
+        "args": {
+          "args": [],
+          "ast_type": "arguments",
+          "col_offset": 0,
+          "default": null,
+          "defaults": [],
+          "end_col_offset": 3,
+          "end_lineno": 52,
+          "lineno": 52,
+          "node_id": 310,
+          "src": "1819:3:0"
+        },
+        "ast_type": "FunctionDef",
+        "body": [
+          {
+            "ast_type": "Assert",
+            "col_offset": 4,
+            "end_col_offset": 35,
+            "end_lineno": 53,
+            "lineno": 53,
+            "msg": null,
+            "node_id": 311,
+            "src": "1844:31:0",
+            "test": {
+              "ast_type": "Compare",
+              "col_offset": 11,
+              "end_col_offset": 35,
+              "end_lineno": 53,
+              "left": {
+                "ast_type": "Attribute",
+                "attr": "owner",
+                "col_offset": 11,
+                "end_col_offset": 21,
+                "end_lineno": 53,
+                "lineno": 53,
+                "node_id": 313,
+                "src": "1851:10:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 11,
+                  "end_col_offset": 15,
+                  "end_lineno": 53,
+                  "id": "self",
+                  "lineno": 53,
+                  "node_id": 314,
+                  "src": "1851:4:0"
+                }
+              },
+              "lineno": 53,
+              "node_id": 312,
+              "op": {
+                "ast_type": "Eq",
+                "col_offset": 11,
+                "end_col_offset": 35,
+                "end_lineno": 53,
+                "lineno": 53,
+                "node_id": 317,
+                "src": "1851:24:0"
+              },
+              "right": {
+                "ast_type": "Attribute",
+                "attr": "sender",
+                "col_offset": 25,
+                "end_col_offset": 35,
+                "end_lineno": 53,
+                "lineno": 53,
+                "node_id": 318,
+                "src": "1865:10:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 25,
+                  "end_col_offset": 28,
+                  "end_lineno": 53,
+                  "id": "msg",
+                  "lineno": 53,
+                  "node_id": 319,
+                  "src": "1865:3:0"
+                }
+              },
+              "src": "1851:24:0"
+            }
+          },
+          {
+            "ast_type": "Expr",
+            "col_offset": 4,
+            "end_col_offset": 63,
+            "end_lineno": 54,
+            "lineno": 54,
+            "node_id": 322,
+            "src": "1880:59:0",
+            "value": {
+              "args": [
+                {
+                  "ast_type": "Attribute",
+                  "attr": "owner",
+                  "col_offset": 32,
+                  "end_col_offset": 42,
+                  "end_lineno": 54,
+                  "lineno": 54,
+                  "node_id": 330,
+                  "src": "1908:10:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 32,
+                    "end_col_offset": 36,
+                    "end_lineno": 54,
+                    "id": "self",
+                    "lineno": 54,
+                    "node_id": 331,
+                    "src": "1908:4:0"
+                  }
+                },
+                {
+                  "ast_type": "Attribute",
+                  "attr": "totalTokenQty",
+                  "col_offset": 44,
+                  "end_col_offset": 62,
+                  "end_lineno": 54,
+                  "lineno": 54,
+                  "node_id": 334,
+                  "src": "1920:18:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 44,
+                    "end_col_offset": 48,
+                    "end_lineno": 54,
+                    "id": "self",
+                    "lineno": 54,
+                    "node_id": 335,
+                    "src": "1920:4:0"
+                  }
+                }
+              ],
+              "ast_type": "Call",
+              "col_offset": 4,
+              "end_col_offset": 63,
+              "end_lineno": 54,
+              "func": {
+                "ast_type": "Attribute",
+                "attr": "transfer",
+                "col_offset": 4,
+                "end_col_offset": 31,
+                "end_lineno": 54,
+                "lineno": 54,
+                "node_id": 324,
+                "src": "1880:27:0",
+                "value": {
+                  "ast_type": "Attribute",
+                  "attr": "token_address",
+                  "col_offset": 4,
+                  "end_col_offset": 22,
+                  "end_lineno": 54,
+                  "lineno": 54,
+                  "node_id": 325,
+                  "src": "1880:18:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 4,
+                    "end_col_offset": 8,
+                    "end_lineno": 54,
+                    "id": "self",
+                    "lineno": 54,
+                    "node_id": 326,
+                    "src": "1880:4:0"
+                  }
+                }
+              },
+              "keyword": null,
+              "keywords": [],
+              "lineno": 54,
+              "node_id": 323,
+              "src": "1880:59:0"
+            }
+          },
+          {
+            "ast_type": "Expr",
+            "col_offset": 4,
+            "end_col_offset": 28,
+            "end_lineno": 55,
+            "lineno": 55,
+            "node_id": 338,
+            "src": "1944:24:0",
+            "value": {
+              "args": [
+                {
+                  "ast_type": "Attribute",
+                  "attr": "owner",
+                  "col_offset": 17,
+                  "end_col_offset": 27,
+                  "end_lineno": 55,
+                  "lineno": 55,
+                  "node_id": 342,
+                  "src": "1957:10:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 17,
+                    "end_col_offset": 21,
+                    "end_lineno": 55,
+                    "id": "self",
+                    "lineno": 55,
+                    "node_id": 343,
+                    "src": "1957:4:0"
+                  }
+                }
+              ],
+              "ast_type": "Call",
+              "col_offset": 4,
+              "end_col_offset": 28,
+              "end_lineno": 55,
+              "func": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 16,
+                "end_lineno": 55,
+                "id": "selfdestruct",
+                "lineno": 55,
+                "node_id": 340,
+                "src": "1944:12:0"
+              },
+              "keyword": null,
+              "keywords": [],
+              "lineno": 55,
+              "node_id": 339,
+              "src": "1944:24:0"
+            }
+          }
+        ],
+        "col_offset": 0,
+        "decorator_list": [
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 9,
+            "end_lineno": 51,
+            "id": "external",
+            "lineno": 51,
+            "node_id": 346,
+            "src": "1810:8:0"
+          }
+        ],
+        "doc_string": null,
+        "end_col_offset": 28,
+        "end_lineno": 55,
+        "lineno": 52,
+        "name": "ownerWithdraw",
+        "node_id": 309,
+        "pos": null,
+        "returns": null,
+        "src": "1819:149:0"
+      }
+    ],
+    "col_offset": 0,
+    "doc_string": null,
+    "end_col_offset": 28,
+    "end_lineno": 55,
+    "lineno": 1,
+    "name": "contracts/Market.vy",
+    "node_id": 0,
+    "src": "0:1968:0"
+  },
+  "bytecode": "0x6103166100186300000000396103166000016300000000f3600436101561000d5761030b565b60003560e01c63b0c78e7781186100bc576004358060a01c61031157604052600254610311576040516003556323b872dd606052336080523060a05260243560c052602060606064607c60006003545af161006d573d600060003e3d6000fd5b60203d10610311576060518060011c6103115760e05260e05033600455346000556024356001553460243580820282158284830414171561031157905090506002556000600254111561031157005b636b2dfe5c811861018457346101f480820490509050604052346040518082106103115780820390509050606052600054606051818183011061031157808201905090506080526002546080518080156103115782049050905060a05263a9059cbb60c0523360e05260015460a051808210610311578082039050905061010052602060c0604460dc60006003545af161015b573d600060003e3d6000fd5b60203d106103115760c0518060011c61031157610120526101205060805160005560a051600155005b34610311576379ca9ad48118610249576323b872dd604052336060523060805260043560a052602060406064605c60006003545af16101c8573d600060003e3d6000fd5b60203d10610311576040518060011c6103115760c05260c050600154600435818183011061031157808201905090506040526002546040518080156103115782049050905060605260005460605180821061031157808203905090506080526000600060006000608051336000f11561031157606051600055604051600155005b634311de8f81186102ae5733600454186103115763a9059cbb604052600454606052600154608052602060406044605c60006003545af161028f573d600060003e3d6000fd5b60203d10610311576040518060011c6103115760a05260a050600454ff005b621fd8c381186102c45760005460405260206040f35b638395e59281186102db5760015460405260206040f35b63b03a9a0581186102f25760025460405260206040f35b638da5cb5b81186103095760045460405260206040f35b505b60006000fd5b600080fd",
+  "bytecodeSha1": "e8d31684ccf4d7495bbf826e5634eda6d81522aa",
+  "compiler": {
+    "evm_version": "istanbul",
+    "version": "0.3.3"
+  },
+  "contractName": "Market",
+  "coverageMap": {
+    "branches": {
+      "0": {}
+    },
+    "statements": {
+      "0": {
+        "Market.ethToTokens": {
+          "8": [
+            902,
+            932
+          ],
+          "9": [
+            937,
+            979
+          ],
+          "10": [
+            984,
+            1043
+          ],
+          "11": [
+            1048,
+            1106
+          ],
+          "12": [
+            1111,
+            1189
+          ],
+          "13": [
+            1194,
+            1226
+          ],
+          "14": [
+            1231,
+            1268
+          ]
+        },
+        "Market.initiate": {
+          "0": [
+            473,
+            499
+          ],
+          "1": [
+            504,
+            542
+          ],
+          "2": [
+            547,
+            612
+          ],
+          "3": [
+            718,
+            761
+          ],
+          "4": [
+            617,
+            640
+          ],
+          "5": [
+            645,
+            673
+          ],
+          "6": [
+            678,
+            713
+          ],
+          "7": [
+            766,
+            791
+          ]
+        },
+        "Market.ownerWithdraw": {
+          "22": [
+            1844,
+            1875
+          ],
+          "23": [
+            1880,
+            1939
+          ],
+          "24": [
+            1944,
+            1968
+          ]
+        },
+        "Market.tokensToEth": {
+          "15": [
+            1378,
+            1442
+          ],
+          "16": [
+            1447,
+            1509
+          ],
+          "17": [
+            1514,
+            1572
+          ],
+          "18": [
+            1577,
+            1632
+          ],
+          "19": [
+            1637,
+            1666
+          ],
+          "20": [
+            1671,
+            1703
+          ],
+          "21": [
+            1708,
+            1745
+          ]
+        }
+      }
+    }
+  },
+  "dependencies": [],
+  "deployedBytecode": "0x600436101561000d5761030b565b60003560e01c63b0c78e7781186100bc576004358060a01c61031157604052600254610311576040516003556323b872dd606052336080523060a05260243560c052602060606064607c60006003545af161006d573d600060003e3d6000fd5b60203d10610311576060518060011c6103115760e05260e05033600455346000556024356001553460243580820282158284830414171561031157905090506002556000600254111561031157005b636b2dfe5c811861018457346101f480820490509050604052346040518082106103115780820390509050606052600054606051818183011061031157808201905090506080526002546080518080156103115782049050905060a05263a9059cbb60c0523360e05260015460a051808210610311578082039050905061010052602060c0604460dc60006003545af161015b573d600060003e3d6000fd5b60203d106103115760c0518060011c61031157610120526101205060805160005560a051600155005b34610311576379ca9ad48118610249576323b872dd604052336060523060805260043560a052602060406064605c60006003545af16101c8573d600060003e3d6000fd5b60203d10610311576040518060011c6103115760c05260c050600154600435818183011061031157808201905090506040526002546040518080156103115782049050905060605260005460605180821061031157808203905090506080526000600060006000608051336000f11561031157606051600055604051600155005b634311de8f81186102ae5733600454186103115763a9059cbb604052600454606052600154608052602060406044605c60006003545af161028f573d600060003e3d6000fd5b60203d10610311576040518060011c6103115760a05260a050600454ff005b621fd8c381186102c45760005460405260206040f35b638395e59281186102db5760015460405260206040f35b63b03a9a0581186102f25760025460405260206040f35b638da5cb5b81186103095760045460405260206040f35b505b60006000fd5b600080fd",
+  "deployedSourceMap": "-1:-1:0:-;;;;;:::-;;:::-;:::-;;;;;;;;409:382;:::-;-1:-1;;;;;;:::-;422:19;;480:14;:19;473:26;:::-;525:17;504:38;:18;:38;-1:-1;;547:65;579:10;-1:-1;;591:4;-1:-1;;747:14;-1:-1;;;;;;;;547:18;-1:-1;;;547:65;:::-;-1:-1;;;;;;;547:65::-;-1:-1;;;547:65;:::-;-1:-1;;;;;;:::-;;;547:65;-1:-1;630:10;617;:23;664:9;645:16;:28;747:14;678:35;:18;:35;735:9;747:14;-1:-1;;;;;;;;;;;;;;:::-;735:26;;;;718:14;:43;790:1;773:14;:18;;766:25;;:::-;-1:-1;409:382::-;-1:-1;;;879:389;:::-;917:9;929:3;-1:-1;;;917:15;;;;902:30;;964:9;976:3;-1:-1;;;;;:::-;;;;964:15;;;;937:42;;1009:16;:34;1028:15;-1:-1;;;;;;;:::-;;;;1009:34;;;;984:59;;1076:14;:30;1093:13;-1:-1;;;;;:::-;;;1076:30;;;;1048:58;;-1:-1;;1111:78;1139:10;-1:-1;;1151:18;:37;1172:16;-1:-1;;;;;:::-;;;;1151:37;;;;-1:-1;;;;;;;1111:18;-1:-1;;;1111:78;:::-;-1:-1;;;;;;;1111:78::-;-1:-1;;;1111:78;:::-;-1:-1;;;;;;:::-;;;1111:78;-1:-1;1213:13;1194:32;:16;:32;1252:16;1231:37;:18;:37;-1:-1;879:389::-;-1:-1;;:::-;;;;1333:412;:::-;-1:-1;;1378:64;1410:10;-1:-1;;1422:4;-1:-1;;1496:13;-1:-1;;;;;;;;1378:18;-1:-1;;;1378:64;:::-;-1:-1;;;;;;;1378:64::-;-1:-1;;;1378:64;:::-;-1:-1;;;;;;:::-;;;1378:64;-1:-1;1475:18;:34;1496:13;-1:-1;;;;;;;:::-;;;;1475:34;;;;1447:62;;1539:14;:33;1556:16;-1:-1;;;;;:::-;;;1539:33;;;;1514:58;;1600:16;:32;1619:13;-1:-1;;;;;:::-;;;;1600:32;;;;1577:55;;-1:-1;;;;1654:11;-1:-1;1642:10;-1:-1;1637:29;;;:::-;1690:13;1671:32;:16;:32;1729:16;1708:37;:18;:37;-1:-1;1333:412::-;-1:-1;;;1819:149;:::-;1865:10;1851;:24;1844:31;;:::-;-1:-1;;1880:59;1908:10;-1:-1;;;1920:18;-1:-1;;;;;;;;1880:18;-1:-1;;;1880:59;:::-;-1:-1;;;;;;;1880:59::-;-1:-1;;;1880:59;:::-;-1:-1;;;;;;:::-;;;1880:59;-1:-1;1957:10;1944:24;;-1:-1;1819:149::-;-1:-1;;;68:15;:::-;-1:-1;;;;;68:15;-1:-1;68:15::-;-1:-1;;;99:15;:::-;-1:-1;;;;;99:15;-1:-1;99:15::-;-1:-1;;;228:15;:::-;-1:-1;;;;;228:15;-1:-1;228:15::-;-1:-1;;;272:15;:::-;-1:-1;;;;;272:15;-1:-1;272:15::-;-1:-1;:::-;;;;:::-;;;;",
+  "language": "Vyper",
+  "natspec": {
+    "methods": {}
+  },
+  "offset": [
+    0,
+    1968
+  ],
+  "opcodes": "PUSH1 0x4 CALLDATASIZE LT ISZERO PUSH2 0x0D JUMPI PUSH2 0x3B JUMP JUMPDEST PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR PUSH4 0xB0C78E77 DUP2 XOR PUSH2 0x0BC JUMPI PUSH1 0x4 CALLDATALOAD DUP1 PUSH1 0xA0 SHR PUSH2 0x311 JUMPI PUSH1 0x40 MSTORE PUSH1 0x2 SLOAD PUSH2 0x311 JUMPI PUSH1 0x40 MLOAD PUSH1 0x3 SSTORE PUSH4 0x23B872DD PUSH1 0x60 MSTORE CALLER PUSH1 0x80 MSTORE ADDRESS PUSH1 0xA0 MSTORE PUSH1 0x24 CALLDATALOAD PUSH1 0xC0 MSTORE PUSH1 0x20 PUSH1 0x60 PUSH1 0x64 PUSH1 0x7C PUSH1 0x0 PUSH1 0x3 SLOAD GAS CALL PUSH2 0x06D JUMPI RETURNDATASIZE PUSH1 0x0 PUSH1 0x0 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST PUSH1 0x20 RETURNDATASIZE LT PUSH2 0x311 JUMPI PUSH1 0x60 MLOAD DUP1 PUSH1 0x1 SHR PUSH2 0x311 JUMPI PUSH1 0xE0 MSTORE PUSH1 0xE0 POP CALLER PUSH1 0x4 SSTORE CALLVALUE PUSH1 0x0 SSTORE PUSH1 0x24 CALLDATALOAD PUSH1 0x1 SSTORE CALLVALUE PUSH1 0x24 CALLDATALOAD DUP1 DUP3 MUL DUP3 ISZERO DUP3 DUP5 DUP4 DIV EQ OR ISZERO PUSH2 0x311 JUMPI SWAP1 POP SWAP1 POP PUSH1 0x2 SSTORE PUSH1 0x0 PUSH1 0x2 SLOAD GT ISZERO PUSH2 0x311 JUMPI STOP JUMPDEST PUSH4 0x6B2DFE5C DUP2 XOR PUSH2 0x184 JUMPI CALLVALUE PUSH2 0x1F4 DUP1 DUP3 DIV SWAP1 POP SWAP1 POP PUSH1 0x40 MSTORE CALLVALUE PUSH1 0x40 MLOAD DUP1 DUP3 LT PUSH2 0x311 JUMPI DUP1 DUP3 SUB SWAP1 POP SWAP1 POP PUSH1 0x60 MSTORE PUSH1 0x0 SLOAD PUSH1 0x60 MLOAD DUP2 DUP2 DUP4 ADD LT PUSH2 0x311 JUMPI DUP1 DUP3 ADD SWAP1 POP SWAP1 POP PUSH1 0x80 MSTORE PUSH1 0x2 SLOAD PUSH1 0x80 MLOAD DUP1 DUP1 ISZERO PUSH2 0x311 JUMPI DUP3 DIV SWAP1 POP SWAP1 POP PUSH1 0xA0 MSTORE PUSH4 0xA959CBB PUSH1 0xC0 MSTORE CALLER PUSH1 0xE0 MSTORE PUSH1 0x1 SLOAD PUSH1 0xA0 MLOAD DUP1 DUP3 LT PUSH2 0x311 JUMPI DUP1 DUP3 SUB SWAP1 POP SWAP1 POP PUSH2 0x10 MSTORE PUSH1 0x20 PUSH1 0xC0 PUSH1 0x44 PUSH1 0xDC PUSH1 0x0 PUSH1 0x3 SLOAD GAS CALL PUSH2 0x15B JUMPI RETURNDATASIZE PUSH1 0x0 PUSH1 0x0 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST PUSH1 0x20 RETURNDATASIZE LT PUSH2 0x311 JUMPI PUSH1 0xC0 MLOAD DUP1 PUSH1 0x1 SHR PUSH2 0x311 JUMPI PUSH2 0x120 MSTORE PUSH2 0x120 POP PUSH1 0x80 MLOAD PUSH1 0x0 SSTORE PUSH1 0xA0 MLOAD PUSH1 0x1 SSTORE STOP JUMPDEST CALLVALUE PUSH2 0x311 JUMPI PUSH4 0x79CA9AD4 DUP2 XOR PUSH2 0x249 JUMPI PUSH4 0x23B872DD PUSH1 0x40 MSTORE CALLER PUSH1 0x60 MSTORE ADDRESS PUSH1 0x80 MSTORE PUSH1 0x4 CALLDATALOAD PUSH1 0xA0 MSTORE PUSH1 0x20 PUSH1 0x40 PUSH1 0x64 PUSH1 0x5C PUSH1 0x0 PUSH1 0x3 SLOAD GAS CALL PUSH2 0x1C8 JUMPI RETURNDATASIZE PUSH1 0x0 PUSH1 0x0 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST PUSH1 0x20 RETURNDATASIZE LT PUSH2 0x311 JUMPI PUSH1 0x40 MLOAD DUP1 PUSH1 0x1 SHR PUSH2 0x311 JUMPI PUSH1 0xC0 MSTORE PUSH1 0xC0 POP PUSH1 0x1 SLOAD PUSH1 0x4 CALLDATALOAD DUP2 DUP2 DUP4 ADD LT PUSH2 0x311 JUMPI DUP1 DUP3 ADD SWAP1 POP SWAP1 POP PUSH1 0x40 MSTORE PUSH1 0x2 SLOAD PUSH1 0x40 MLOAD DUP1 DUP1 ISZERO PUSH2 0x311 JUMPI DUP3 DIV SWAP1 POP SWAP1 POP PUSH1 0x60 MSTORE PUSH1 0x0 SLOAD PUSH1 0x60 MLOAD DUP1 DUP3 LT PUSH2 0x311 JUMPI DUP1 DUP3 SUB SWAP1 POP SWAP1 POP PUSH1 0x80 MSTORE PUSH1 0x0 PUSH1 0x0 PUSH1 0x0 PUSH1 0x0 PUSH1 0x80 MLOAD CALLER PUSH1 0x0 CALL ISZERO PUSH2 0x311 JUMPI PUSH1 0x60 MLOAD PUSH1 0x0 SSTORE PUSH1 0x40 MLOAD PUSH1 0x1 SSTORE STOP JUMPDEST PUSH4 0x4311DE8F DUP2 XOR PUSH2 0x2AE JUMPI CALLER PUSH1 0x4 SLOAD XOR PUSH2 0x311 JUMPI PUSH4 0xA959CBB PUSH1 0x40 MSTORE PUSH1 0x4 SLOAD PUSH1 0x60 MSTORE PUSH1 0x1 SLOAD PUSH1 0x80 MSTORE PUSH1 0x20 PUSH1 0x40 PUSH1 0x44 PUSH1 0x5C PUSH1 0x0 PUSH1 0x3 SLOAD GAS CALL PUSH2 0x28F JUMPI RETURNDATASIZE PUSH1 0x0 PUSH1 0x0 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST PUSH1 0x20 RETURNDATASIZE LT PUSH2 0x311 JUMPI PUSH1 0x40 MLOAD DUP1 PUSH1 0x1 SHR PUSH2 0x311 JUMPI PUSH1 0xA0 MSTORE PUSH1 0xA0 POP PUSH1 0x4 SLOAD SELFDESTRUCT STOP JUMPDEST PUSH3 0x1FD8C3 DUP2 XOR PUSH2 0x2C4 JUMPI PUSH1 0x0 SLOAD PUSH1 0x40 MSTORE PUSH1 0x20 PUSH1 0x40 RETURN JUMPDEST PUSH4 0x8395E592 DUP2 XOR PUSH2 0x2DB JUMPI PUSH1 0x1 SLOAD PUSH1 0x40 MSTORE PUSH1 0x20 PUSH1 0x40 RETURN JUMPDEST PUSH4 0xB03A9A5 DUP2 XOR PUSH2 0x2F2 JUMPI PUSH1 0x2 SLOAD PUSH1 0x40 MSTORE PUSH1 0x20 PUSH1 0x40 RETURN JUMPDEST PUSH4 0x8DA5CB5B DUP2 XOR PUSH2 0x39 JUMPI PUSH1 0x4 SLOAD PUSH1 0x40 MSTORE PUSH1 0x20 PUSH1 0x40 RETURN JUMPDEST POP JUMPDEST PUSH1 0x0 PUSH1 0x0 REVERT JUMPDEST PUSH1 0x0 DUP1 REVERT",
+  "pcMap": {
+    "0": {
+      "offset": [
+        0,
+        1968
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "2": {
+      "op": "CALLDATASIZE"
+    },
+    "3": {
+      "op": "LT"
+    },
+    "4": {
+      "op": "ISZERO"
+    },
+    "5": {
+      "op": "PUSH2",
+      "value": "0x0D"
+    },
+    "8": {
+      "op": "JUMPI"
+    },
+    "9": {
+      "op": "PUSH2",
+      "value": "0x3B"
+    },
+    "12": {
+      "op": "JUMP"
+    },
+    "13": {
+      "op": "JUMPDEST"
+    },
+    "14": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "16": {
+      "op": "CALLDATALOAD"
+    },
+    "17": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "19": {
+      "op": "SHR"
+    },
+    "20": {
+      "op": "PUSH4",
+      "value": "0xB0C78E77"
+    },
+    "25": {
+      "op": "DUP2"
+    },
+    "26": {
+      "op": "XOR"
+    },
+    "27": {
+      "fn": "Market.initiate",
+      "offset": [
+        409,
+        791
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x0BC"
+    },
+    "30": {
+      "fn": "Market.initiate",
+      "offset": [
+        409,
+        791
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "31": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "33": {
+      "op": "CALLDATALOAD"
+    },
+    "34": {
+      "op": "DUP1"
+    },
+    "35": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "37": {
+      "op": "SHR"
+    },
+    "38": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "41": {
+      "op": "JUMPI"
+    },
+    "42": {
+      "fn": "Market.initiate",
+      "offset": [
+        422,
+        441
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "44": {
+      "fn": "Market.initiate",
+      "offset": [
+        422,
+        441
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "45": {
+      "fn": "Market.initiate",
+      "offset": [
+        480,
+        494
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 0,
+      "value": "0x2"
+    },
+    "47": {
+      "fn": "Market.initiate",
+      "offset": [
+        480,
+        499
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "48": {
+      "fn": "Market.initiate",
+      "offset": [
+        473,
+        499
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x311"
+    },
+    "51": {
+      "fn": "Market.initiate",
+      "offset": [
+        473,
+        499
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "52": {
+      "fn": "Market.initiate",
+      "offset": [
+        525,
+        542
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 1,
+      "value": "0x40"
+    },
+    "54": {
+      "fn": "Market.initiate",
+      "offset": [
+        504,
+        542
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "55": {
+      "fn": "Market.initiate",
+      "offset": [
+        504,
+        522
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x3"
+    },
+    "57": {
+      "fn": "Market.initiate",
+      "offset": [
+        504,
+        542
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "58": {
+      "op": "PUSH4",
+      "value": "0x23B872DD"
+    },
+    "63": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "65": {
+      "fn": "Market.initiate",
+      "offset": [
+        547,
+        612
+      ],
+      "op": "MSTORE",
+      "path": "0",
+      "statement": 2
+    },
+    "66": {
+      "fn": "Market.initiate",
+      "offset": [
+        579,
+        589
+      ],
+      "op": "CALLER",
+      "path": "0"
+    },
+    "67": {
+      "op": "PUSH1",
+      "value": "0x80"
+    },
+    "69": {
+      "op": "MSTORE"
+    },
+    "70": {
+      "fn": "Market.initiate",
+      "offset": [
+        591,
+        595
+      ],
+      "op": "ADDRESS",
+      "path": "0"
+    },
+    "71": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "73": {
+      "op": "MSTORE"
+    },
+    "74": {
+      "fn": "Market.initiate",
+      "offset": [
+        747,
+        761
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 3,
+      "value": "0x24"
+    },
+    "76": {
+      "op": "CALLDATALOAD"
+    },
+    "77": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "79": {
+      "op": "MSTORE"
+    },
+    "80": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "82": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "84": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "86": {
+      "op": "PUSH1",
+      "value": "0x7C"
+    },
+    "88": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "90": {
+      "fn": "Market.initiate",
+      "offset": [
+        547,
+        565
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x3"
+    },
+    "92": {
+      "op": "SLOAD"
+    },
+    "93": {
+      "op": "GAS"
+    },
+    "94": {
+      "op": "CALL"
+    },
+    "95": {
+      "fn": "Market.initiate",
+      "offset": [
+        547,
+        612
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x06D"
+    },
+    "98": {
+      "fn": "Market.initiate",
+      "offset": [
+        547,
+        612
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "99": {
+      "op": "RETURNDATASIZE"
+    },
+    "100": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "102": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "104": {
+      "op": "RETURNDATACOPY"
+    },
+    "105": {
+      "op": "RETURNDATASIZE"
+    },
+    "106": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "108": {
+      "op": "REVERT"
+    },
+    "109": {
+      "fn": "Market.initiate",
+      "offset": [
+        547,
+        612
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "110": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "112": {
+      "op": "RETURNDATASIZE"
+    },
+    "113": {
+      "op": "LT"
+    },
+    "114": {
+      "fn": "Market.initiate",
+      "offset": [
+        547,
+        612
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x311"
+    },
+    "117": {
+      "fn": "Market.initiate",
+      "offset": [
+        547,
+        612
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "118": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "120": {
+      "op": "MLOAD"
+    },
+    "121": {
+      "op": "DUP1"
+    },
+    "122": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "124": {
+      "op": "SHR"
+    },
+    "125": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "128": {
+      "op": "JUMPI"
+    },
+    "129": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "131": {
+      "op": "MSTORE"
+    },
+    "132": {
+      "fn": "Market.initiate",
+      "offset": [
+        547,
+        612
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0xE0"
+    },
+    "134": {
+      "op": "POP"
+    },
+    "135": {
+      "fn": "Market.initiate",
+      "offset": [
+        630,
+        640
+      ],
+      "op": "CALLER",
+      "path": "0",
+      "statement": 4
+    },
+    "136": {
+      "fn": "Market.initiate",
+      "offset": [
+        617,
+        627
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "138": {
+      "fn": "Market.initiate",
+      "offset": [
+        617,
+        640
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "139": {
+      "fn": "Market.initiate",
+      "offset": [
+        664,
+        673
+      ],
+      "op": "CALLVALUE",
+      "path": "0",
+      "statement": 5
+    },
+    "140": {
+      "fn": "Market.initiate",
+      "offset": [
+        645,
+        661
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "142": {
+      "fn": "Market.initiate",
+      "offset": [
+        645,
+        673
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "143": {
+      "fn": "Market.initiate",
+      "offset": [
+        747,
+        761
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x24"
+    },
+    "145": {
+      "fn": "Market.initiate",
+      "offset": [
+        678,
+        713
+      ],
+      "op": "CALLDATALOAD",
+      "path": "0",
+      "statement": 6
+    },
+    "146": {
+      "fn": "Market.initiate",
+      "offset": [
+        678,
+        696
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "148": {
+      "fn": "Market.initiate",
+      "offset": [
+        678,
+        713
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "149": {
+      "fn": "Market.initiate",
+      "offset": [
+        735,
+        744
+      ],
+      "op": "CALLVALUE",
+      "path": "0"
+    },
+    "150": {
+      "fn": "Market.initiate",
+      "offset": [
+        747,
+        761
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x24"
+    },
+    "152": {
+      "op": "CALLDATALOAD"
+    },
+    "153": {
+      "op": "DUP1"
+    },
+    "154": {
+      "op": "DUP3"
+    },
+    "155": {
+      "op": "MUL"
+    },
+    "156": {
+      "op": "DUP3"
+    },
+    "157": {
+      "op": "ISZERO"
+    },
+    "158": {
+      "op": "DUP3"
+    },
+    "159": {
+      "op": "DUP5"
+    },
+    "160": {
+      "op": "DUP4"
+    },
+    "161": {
+      "op": "DIV"
+    },
+    "162": {
+      "op": "EQ"
+    },
+    "163": {
+      "op": "OR"
+    },
+    "164": {
+      "op": "ISZERO"
+    },
+    "165": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "168": {
+      "op": "JUMPI"
+    },
+    "169": {
+      "fn": "Market.initiate",
+      "offset": [
+        735,
+        761
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "170": {
+      "fn": "Market.initiate",
+      "offset": [
+        735,
+        761
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "171": {
+      "fn": "Market.initiate",
+      "offset": [
+        735,
+        761
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "172": {
+      "fn": "Market.initiate",
+      "offset": [
+        735,
+        761
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "173": {
+      "fn": "Market.initiate",
+      "offset": [
+        718,
+        732
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x2"
+    },
+    "175": {
+      "fn": "Market.initiate",
+      "offset": [
+        718,
+        761
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "176": {
+      "fn": "Market.initiate",
+      "offset": [
+        790,
+        791
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 7,
+      "value": "0x0"
+    },
+    "178": {
+      "fn": "Market.initiate",
+      "offset": [
+        773,
+        787
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x2"
+    },
+    "180": {
+      "fn": "Market.initiate",
+      "offset": [
+        773,
+        791
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "181": {
+      "fn": "Market.initiate",
+      "offset": [
+        773,
+        791
+      ],
+      "op": "GT",
+      "path": "0"
+    },
+    "182": {
+      "fn": "Market.initiate",
+      "offset": [
+        766,
+        791
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "183": {
+      "fn": "Market.initiate",
+      "offset": [
+        766,
+        791
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x311"
+    },
+    "186": {
+      "fn": "Market.initiate",
+      "offset": [
+        766,
+        791
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "187": {
+      "op": "STOP"
+    },
+    "188": {
+      "fn": "Market.initiate",
+      "offset": [
+        409,
+        791
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "189": {
+      "op": "PUSH4",
+      "value": "0x6B2DFE5C"
+    },
+    "194": {
+      "op": "DUP2"
+    },
+    "195": {
+      "op": "XOR"
+    },
+    "196": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        879,
+        1268
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x184"
+    },
+    "199": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        879,
+        1268
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "200": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        917,
+        926
+      ],
+      "op": "CALLVALUE",
+      "path": "0",
+      "statement": 8
+    },
+    "201": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        929,
+        932
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1F4"
+    },
+    "204": {
+      "op": "DUP1"
+    },
+    "205": {
+      "op": "DUP3"
+    },
+    "206": {
+      "op": "DIV"
+    },
+    "207": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        917,
+        932
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "208": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        917,
+        932
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "209": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        917,
+        932
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "210": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        917,
+        932
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "211": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        902,
+        932
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "213": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        902,
+        932
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "214": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        964,
+        973
+      ],
+      "op": "CALLVALUE",
+      "path": "0",
+      "statement": 9
+    },
+    "215": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        976,
+        979
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "217": {
+      "op": "MLOAD"
+    },
+    "218": {
+      "op": "DUP1"
+    },
+    "219": {
+      "op": "DUP3"
+    },
+    "220": {
+      "op": "LT"
+    },
+    "221": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "224": {
+      "op": "JUMPI"
+    },
+    "225": {
+      "op": "DUP1"
+    },
+    "226": {
+      "op": "DUP3"
+    },
+    "227": {
+      "op": "SUB"
+    },
+    "228": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        964,
+        979
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "229": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        964,
+        979
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "230": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        964,
+        979
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "231": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        964,
+        979
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "232": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        937,
+        979
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x60"
+    },
+    "234": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        937,
+        979
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "235": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1009,
+        1025
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 10,
+      "value": "0x0"
+    },
+    "237": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1009,
+        1043
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "238": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1028,
+        1043
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x60"
+    },
+    "240": {
+      "op": "MLOAD"
+    },
+    "241": {
+      "op": "DUP2"
+    },
+    "242": {
+      "op": "DUP2"
+    },
+    "243": {
+      "op": "DUP4"
+    },
+    "244": {
+      "op": "ADD"
+    },
+    "245": {
+      "op": "LT"
+    },
+    "246": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "249": {
+      "op": "JUMPI"
+    },
+    "250": {
+      "op": "DUP1"
+    },
+    "251": {
+      "op": "DUP3"
+    },
+    "252": {
+      "op": "ADD"
+    },
+    "253": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1009,
+        1043
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "254": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1009,
+        1043
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "255": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1009,
+        1043
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "256": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1009,
+        1043
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "257": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        984,
+        1043
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x80"
+    },
+    "259": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        984,
+        1043
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "260": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1076,
+        1090
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 11,
+      "value": "0x2"
+    },
+    "262": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1076,
+        1106
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "263": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1093,
+        1106
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x80"
+    },
+    "265": {
+      "op": "MLOAD"
+    },
+    "266": {
+      "op": "DUP1"
+    },
+    "267": {
+      "op": "DUP1"
+    },
+    "268": {
+      "op": "ISZERO"
+    },
+    "269": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "272": {
+      "op": "JUMPI"
+    },
+    "273": {
+      "op": "DUP3"
+    },
+    "274": {
+      "op": "DIV"
+    },
+    "275": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1076,
+        1106
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "276": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1076,
+        1106
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "277": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1076,
+        1106
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "278": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1076,
+        1106
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "279": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1048,
+        1106
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0xA0"
+    },
+    "281": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1048,
+        1106
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "282": {
+      "op": "PUSH4",
+      "value": "0xA959CBB"
+    },
+    "287": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "289": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1111,
+        1189
+      ],
+      "op": "MSTORE",
+      "path": "0",
+      "statement": 12
+    },
+    "290": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1139,
+        1149
+      ],
+      "op": "CALLER",
+      "path": "0"
+    },
+    "291": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "293": {
+      "op": "MSTORE"
+    },
+    "294": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1151,
+        1169
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "296": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1151,
+        1188
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "297": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1172,
+        1188
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0xA0"
+    },
+    "299": {
+      "op": "MLOAD"
+    },
+    "300": {
+      "op": "DUP1"
+    },
+    "301": {
+      "op": "DUP3"
+    },
+    "302": {
+      "op": "LT"
+    },
+    "303": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "306": {
+      "op": "JUMPI"
+    },
+    "307": {
+      "op": "DUP1"
+    },
+    "308": {
+      "op": "DUP3"
+    },
+    "309": {
+      "op": "SUB"
+    },
+    "310": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1151,
+        1188
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "311": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1151,
+        1188
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "312": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1151,
+        1188
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "313": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1151,
+        1188
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "314": {
+      "op": "PUSH2",
+      "value": "0x10"
+    },
+    "317": {
+      "op": "MSTORE"
+    },
+    "318": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "320": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "322": {
+      "op": "PUSH1",
+      "value": "0x44"
+    },
+    "324": {
+      "op": "PUSH1",
+      "value": "0xDC"
+    },
+    "326": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "328": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1111,
+        1129
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x3"
+    },
+    "330": {
+      "op": "SLOAD"
+    },
+    "331": {
+      "op": "GAS"
+    },
+    "332": {
+      "op": "CALL"
+    },
+    "333": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1111,
+        1189
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x15B"
+    },
+    "336": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1111,
+        1189
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "337": {
+      "op": "RETURNDATASIZE"
+    },
+    "338": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "340": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "342": {
+      "op": "RETURNDATACOPY"
+    },
+    "343": {
+      "op": "RETURNDATASIZE"
+    },
+    "344": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "346": {
+      "op": "REVERT"
+    },
+    "347": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1111,
+        1189
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "348": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "350": {
+      "op": "RETURNDATASIZE"
+    },
+    "351": {
+      "op": "LT"
+    },
+    "352": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1111,
+        1189
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x311"
+    },
+    "355": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1111,
+        1189
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "356": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "358": {
+      "op": "MLOAD"
+    },
+    "359": {
+      "op": "DUP1"
+    },
+    "360": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "362": {
+      "op": "SHR"
+    },
+    "363": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "366": {
+      "op": "JUMPI"
+    },
+    "367": {
+      "op": "PUSH2",
+      "value": "0x120"
+    },
+    "370": {
+      "op": "MSTORE"
+    },
+    "371": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1111,
+        1189
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x120"
+    },
+    "374": {
+      "op": "POP"
+    },
+    "375": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1213,
+        1226
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 13,
+      "value": "0x80"
+    },
+    "377": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1194,
+        1226
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "378": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1194,
+        1210
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "380": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1194,
+        1226
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "381": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1252,
+        1268
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 14,
+      "value": "0xA0"
+    },
+    "383": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1231,
+        1268
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "384": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1231,
+        1249
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "386": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        1231,
+        1268
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "387": {
+      "op": "STOP"
+    },
+    "388": {
+      "fn": "Market.ethToTokens",
+      "offset": [
+        879,
+        1268
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "389": {
+      "op": "CALLVALUE"
+    },
+    "390": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "393": {
+      "dev": "Cannot send ether to nonpayable function",
+      "offset": [
+        0,
+        0
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "394": {
+      "op": "PUSH4",
+      "value": "0x79CA9AD4"
+    },
+    "399": {
+      "op": "DUP2"
+    },
+    "400": {
+      "op": "XOR"
+    },
+    "401": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1333,
+        1745
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x249"
+    },
+    "404": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1333,
+        1745
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "405": {
+      "op": "PUSH4",
+      "value": "0x23B872DD"
+    },
+    "410": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "412": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1378,
+        1442
+      ],
+      "op": "MSTORE",
+      "path": "0",
+      "statement": 15
+    },
+    "413": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1410,
+        1420
+      ],
+      "op": "CALLER",
+      "path": "0"
+    },
+    "414": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "416": {
+      "op": "MSTORE"
+    },
+    "417": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1422,
+        1426
+      ],
+      "op": "ADDRESS",
+      "path": "0"
+    },
+    "418": {
+      "op": "PUSH1",
+      "value": "0x80"
+    },
+    "420": {
+      "op": "MSTORE"
+    },
+    "421": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1496,
+        1509
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 16,
+      "value": "0x4"
+    },
+    "423": {
+      "op": "CALLDATALOAD"
+    },
+    "424": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "426": {
+      "op": "MSTORE"
+    },
+    "427": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "429": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "431": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "433": {
+      "op": "PUSH1",
+      "value": "0x5C"
+    },
+    "435": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "437": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1378,
+        1396
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x3"
+    },
+    "439": {
+      "op": "SLOAD"
+    },
+    "440": {
+      "op": "GAS"
+    },
+    "441": {
+      "op": "CALL"
+    },
+    "442": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1378,
+        1442
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1C8"
+    },
+    "445": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1378,
+        1442
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "446": {
+      "op": "RETURNDATASIZE"
+    },
+    "447": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "449": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "451": {
+      "op": "RETURNDATACOPY"
+    },
+    "452": {
+      "op": "RETURNDATASIZE"
+    },
+    "453": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "455": {
+      "op": "REVERT"
+    },
+    "456": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1378,
+        1442
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "457": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "459": {
+      "op": "RETURNDATASIZE"
+    },
+    "460": {
+      "op": "LT"
+    },
+    "461": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1378,
+        1442
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x311"
+    },
+    "464": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1378,
+        1442
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "465": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "467": {
+      "op": "MLOAD"
+    },
+    "468": {
+      "op": "DUP1"
+    },
+    "469": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "471": {
+      "op": "SHR"
+    },
+    "472": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "475": {
+      "op": "JUMPI"
+    },
+    "476": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "478": {
+      "op": "MSTORE"
+    },
+    "479": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1378,
+        1442
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0xC0"
+    },
+    "481": {
+      "op": "POP"
+    },
+    "482": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1475,
+        1493
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "484": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1475,
+        1509
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "485": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1496,
+        1509
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "487": {
+      "op": "CALLDATALOAD"
+    },
+    "488": {
+      "op": "DUP2"
+    },
+    "489": {
+      "op": "DUP2"
+    },
+    "490": {
+      "op": "DUP4"
+    },
+    "491": {
+      "op": "ADD"
+    },
+    "492": {
+      "op": "LT"
+    },
+    "493": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "496": {
+      "op": "JUMPI"
+    },
+    "497": {
+      "op": "DUP1"
+    },
+    "498": {
+      "op": "DUP3"
+    },
+    "499": {
+      "op": "ADD"
+    },
+    "500": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1475,
+        1509
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "501": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1475,
+        1509
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "502": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1475,
+        1509
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "503": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1475,
+        1509
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "504": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1447,
+        1509
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "506": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1447,
+        1509
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "507": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1539,
+        1553
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 17,
+      "value": "0x2"
+    },
+    "509": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1539,
+        1572
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "510": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1556,
+        1572
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "512": {
+      "op": "MLOAD"
+    },
+    "513": {
+      "op": "DUP1"
+    },
+    "514": {
+      "op": "DUP1"
+    },
+    "515": {
+      "op": "ISZERO"
+    },
+    "516": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "519": {
+      "op": "JUMPI"
+    },
+    "520": {
+      "op": "DUP3"
+    },
+    "521": {
+      "op": "DIV"
+    },
+    "522": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1539,
+        1572
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "523": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1539,
+        1572
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "524": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1539,
+        1572
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "525": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1539,
+        1572
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "526": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1514,
+        1572
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x60"
+    },
+    "528": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1514,
+        1572
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "529": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1600,
+        1616
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 18,
+      "value": "0x0"
+    },
+    "531": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1600,
+        1632
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "532": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1619,
+        1632
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x60"
+    },
+    "534": {
+      "op": "MLOAD"
+    },
+    "535": {
+      "op": "DUP1"
+    },
+    "536": {
+      "op": "DUP3"
+    },
+    "537": {
+      "op": "LT"
+    },
+    "538": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "541": {
+      "op": "JUMPI"
+    },
+    "542": {
+      "op": "DUP1"
+    },
+    "543": {
+      "op": "DUP3"
+    },
+    "544": {
+      "op": "SUB"
+    },
+    "545": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1600,
+        1632
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "546": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1600,
+        1632
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "547": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1600,
+        1632
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "548": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1600,
+        1632
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "549": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1577,
+        1632
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x80"
+    },
+    "551": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1577,
+        1632
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "552": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "554": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "556": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "558": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "560": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1654,
+        1665
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 19,
+      "value": "0x80"
+    },
+    "562": {
+      "op": "MLOAD"
+    },
+    "563": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1642,
+        1652
+      ],
+      "op": "CALLER",
+      "path": "0"
+    },
+    "564": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "566": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1637,
+        1666
+      ],
+      "op": "CALL",
+      "path": "0"
+    },
+    "567": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1637,
+        1666
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "568": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1637,
+        1666
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x311"
+    },
+    "571": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1637,
+        1666
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "572": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1690,
+        1703
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 20,
+      "value": "0x60"
+    },
+    "574": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1671,
+        1703
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "575": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1671,
+        1687
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "577": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1671,
+        1703
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "578": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1729,
+        1745
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 21,
+      "value": "0x40"
+    },
+    "580": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1708,
+        1745
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "581": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1708,
+        1726
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "583": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1708,
+        1745
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "584": {
+      "op": "STOP"
+    },
+    "585": {
+      "fn": "Market.tokensToEth",
+      "offset": [
+        1333,
+        1745
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "586": {
+      "op": "PUSH4",
+      "value": "0x4311DE8F"
+    },
+    "591": {
+      "op": "DUP2"
+    },
+    "592": {
+      "op": "XOR"
+    },
+    "593": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1819,
+        1968
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x2AE"
+    },
+    "596": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1819,
+        1968
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "597": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1865,
+        1875
+      ],
+      "op": "CALLER",
+      "path": "0",
+      "statement": 22
+    },
+    "598": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1851,
+        1861
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "600": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1851,
+        1875
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "601": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1844,
+        1875
+      ],
+      "op": "XOR",
+      "path": "0"
+    },
+    "602": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1844,
+        1875
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x311"
+    },
+    "605": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1844,
+        1875
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "606": {
+      "op": "PUSH4",
+      "value": "0xA959CBB"
+    },
+    "611": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "613": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1880,
+        1939
+      ],
+      "op": "MSTORE",
+      "path": "0",
+      "statement": 23
+    },
+    "614": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1908,
+        1918
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "616": {
+      "op": "SLOAD"
+    },
+    "617": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "619": {
+      "op": "MSTORE"
+    },
+    "620": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1920,
+        1938
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "622": {
+      "op": "SLOAD"
+    },
+    "623": {
+      "op": "PUSH1",
+      "value": "0x80"
+    },
+    "625": {
+      "op": "MSTORE"
+    },
+    "626": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "628": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "630": {
+      "op": "PUSH1",
+      "value": "0x44"
+    },
+    "632": {
+      "op": "PUSH1",
+      "value": "0x5C"
+    },
+    "634": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "636": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1880,
+        1898
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x3"
+    },
+    "638": {
+      "op": "SLOAD"
+    },
+    "639": {
+      "op": "GAS"
+    },
+    "640": {
+      "op": "CALL"
+    },
+    "641": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1880,
+        1939
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x28F"
+    },
+    "644": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1880,
+        1939
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "645": {
+      "op": "RETURNDATASIZE"
+    },
+    "646": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "648": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "650": {
+      "op": "RETURNDATACOPY"
+    },
+    "651": {
+      "op": "RETURNDATASIZE"
+    },
+    "652": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "654": {
+      "op": "REVERT"
+    },
+    "655": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1880,
+        1939
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "656": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "658": {
+      "op": "RETURNDATASIZE"
+    },
+    "659": {
+      "op": "LT"
+    },
+    "660": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1880,
+        1939
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x311"
+    },
+    "663": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1880,
+        1939
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "664": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "666": {
+      "op": "MLOAD"
+    },
+    "667": {
+      "op": "DUP1"
+    },
+    "668": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "670": {
+      "op": "SHR"
+    },
+    "671": {
+      "op": "PUSH2",
+      "value": "0x311"
+    },
+    "674": {
+      "op": "JUMPI"
+    },
+    "675": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "677": {
+      "op": "MSTORE"
+    },
+    "678": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1880,
+        1939
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0xA0"
+    },
+    "680": {
+      "op": "POP"
+    },
+    "681": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1957,
+        1967
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 24,
+      "value": "0x4"
+    },
+    "683": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1944,
+        1968
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "684": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1944,
+        1968
+      ],
+      "op": "SELFDESTRUCT",
+      "path": "0"
+    },
+    "685": {
+      "op": "STOP"
+    },
+    "686": {
+      "fn": "Market.ownerWithdraw",
+      "offset": [
+        1819,
+        1968
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "687": {
+      "op": "PUSH3",
+      "value": "0x1FD8C3"
+    },
+    "691": {
+      "op": "DUP2"
+    },
+    "692": {
+      "op": "XOR"
+    },
+    "693": {
+      "offset": [
+        68,
+        83
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x2C4"
+    },
+    "696": {
+      "offset": [
+        68,
+        83
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "697": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "699": {
+      "op": "SLOAD"
+    },
+    "700": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "702": {
+      "op": "MSTORE"
+    },
+    "703": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "705": {
+      "offset": [
+        68,
+        83
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "707": {
+      "op": "RETURN"
+    },
+    "708": {
+      "offset": [
+        68,
+        83
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "709": {
+      "op": "PUSH4",
+      "value": "0x8395E592"
+    },
+    "714": {
+      "op": "DUP2"
+    },
+    "715": {
+      "op": "XOR"
+    },
+    "716": {
+      "offset": [
+        99,
+        114
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x2DB"
+    },
+    "719": {
+      "offset": [
+        99,
+        114
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "720": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "722": {
+      "op": "SLOAD"
+    },
+    "723": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "725": {
+      "op": "MSTORE"
+    },
+    "726": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "728": {
+      "offset": [
+        99,
+        114
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "730": {
+      "op": "RETURN"
+    },
+    "731": {
+      "offset": [
+        99,
+        114
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "732": {
+      "op": "PUSH4",
+      "value": "0xB03A9A5"
+    },
+    "737": {
+      "op": "DUP2"
+    },
+    "738": {
+      "op": "XOR"
+    },
+    "739": {
+      "offset": [
+        228,
+        243
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x2F2"
+    },
+    "742": {
+      "offset": [
+        228,
+        243
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "743": {
+      "op": "PUSH1",
+      "value": "0x2"
+    },
+    "745": {
+      "op": "SLOAD"
+    },
+    "746": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "748": {
+      "op": "MSTORE"
+    },
+    "749": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "751": {
+      "offset": [
+        228,
+        243
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "753": {
+      "op": "RETURN"
+    },
+    "754": {
+      "offset": [
+        228,
+        243
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "755": {
+      "op": "PUSH4",
+      "value": "0x8DA5CB5B"
+    },
+    "760": {
+      "op": "DUP2"
+    },
+    "761": {
+      "op": "XOR"
+    },
+    "762": {
+      "offset": [
+        272,
+        287
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x39"
+    },
+    "765": {
+      "offset": [
+        272,
+        287
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "766": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "768": {
+      "op": "SLOAD"
+    },
+    "769": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "771": {
+      "op": "MSTORE"
+    },
+    "772": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "774": {
+      "offset": [
+        272,
+        287
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "776": {
+      "op": "RETURN"
+    },
+    "777": {
+      "offset": [
+        272,
+        287
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "778": {
+      "op": "POP"
+    },
+    "779": {
+      "op": "JUMPDEST"
+    },
+    "780": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "782": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "784": {
+      "op": "REVERT"
+    },
+    "785": {
+      "op": "JUMPDEST"
+    },
+    "786": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "788": {
+      "op": "DUP1"
+    },
+    "789": {
+      "op": "REVERT",
+      "optimizer_revert": true
+    }
+  },
+  "sha1": "979e48dccf9f16ebffc3af87d19552f2812d8b3c",
+  "source": "# @version ^0.3.0\nfrom vyper.interfaces import ERC20\n\n\ntotalEthQty: public(uint256)\ntotalTokenQty: public(uint256)\n# Constant set in `initiate` that's used to calculate\n# the amount of ether/tokens that are exchanged\ninvariant: public(uint256)\ntoken_address: ERC20\nowner: public(address)\n\n# Sets the on chain market maker with its owner, intial token quantity,\n# and initial ether quantity\n@external\n@payable\ndef initiate(token_addr: address, token_quantity: uint256):\n    assert self.invariant == 0\n    self.token_address = ERC20(token_addr)\n    self.token_address.transferFrom(msg.sender, self, token_quantity)\n    self.owner = msg.sender\n    self.totalEthQty = msg.value\n    self.totalTokenQty = token_quantity\n    self.invariant = msg.value * token_quantity\n    assert self.invariant > 0\n\n# Sells ether to the contract in exchange for tokens (minus a fee)\n@external\n@payable\ndef ethToTokens():\n    fee: uint256 = msg.value / 500\n    eth_in_purchase: uint256 = msg.value - fee\n    new_total_eth: uint256 = self.totalEthQty + eth_in_purchase\n    new_total_tokens: uint256 = self.invariant / new_total_eth\n    self.token_address.transfer(msg.sender, self.totalTokenQty - new_total_tokens)\n    self.totalEthQty = new_total_eth\n    self.totalTokenQty = new_total_tokens\n\n# Sells tokens to the contract in exchange for ether\n@external\ndef tokensToEth(sell_quantity: uint256):\n    self.token_address.transferFrom(msg.sender, self, sell_quantity)\n    new_total_tokens: uint256 = self.totalTokenQty + sell_quantity\n    new_total_eth: uint256 = self.invariant / new_total_tokens\n    eth_to_send: uint256 = self.totalEthQty - new_total_eth\n    send(msg.sender, eth_to_send)\n    self.totalEthQty = new_total_eth\n    self.totalTokenQty = new_total_tokens\n\n# Owner can withdraw their funds and destroy the market maker\n@external\ndef ownerWithdraw():\n    assert self.owner == msg.sender\n    self.token_address.transfer(self.owner, self.totalTokenQty)\n    selfdestruct(self.owner)",
+  "sourceMap": "",
+  "sourcePath": "contracts/Market.vy",
+  "type": "contract"
+}

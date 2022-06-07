@@ -1,0 +1,1674 @@
+{
+    "abi": [
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "setter",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "int128"
+                }
+            ],
+            "name": "DataChange",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "name": "_x",
+                    "type": "int128"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+            "name": "constructor"
+        },
+        {
+            "inputs": [
+                {
+                    "name": "_x",
+                    "type": "int128"
+                }
+            ],
+            "name": "set",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "reset",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "storedData",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "int128"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ],
+    "allSourcePaths": {
+        "0": "contracts/Storage.vy"
+    },
+    "ast": {
+        "ast_type": "Module",
+        "body": [
+            {
+                "ast_type": "EventDef",
+                "body": [
+                    {
+                        "annotation": {
+                            "args": [
+                                {
+                                    "ast_type": "Name",
+                                    "col_offset": 20,
+                                    "end_col_offset": 27,
+                                    "end_lineno": 4,
+                                    "id": "address",
+                                    "lineno": 4,
+                                    "node_id": 8,
+                                    "src": "57:7:0"
+                                }
+                            ],
+                            "ast_type": "Call",
+                            "col_offset": 12,
+                            "end_col_offset": 28,
+                            "end_lineno": 4,
+                            "func": {
+                                "ast_type": "Name",
+                                "col_offset": 12,
+                                "end_col_offset": 19,
+                                "end_lineno": 4,
+                                "id": "indexed",
+                                "lineno": 4,
+                                "node_id": 6,
+                                "src": "49:7:0"
+                            },
+                            "keyword": null,
+                            "keywords": [],
+                            "lineno": 4,
+                            "node_id": 5,
+                            "src": "49:16:0"
+                        },
+                        "ast_type": "AnnAssign",
+                        "col_offset": 4,
+                        "end_col_offset": 28,
+                        "end_lineno": 4,
+                        "lineno": 4,
+                        "node_id": 2,
+                        "simple": 1,
+                        "src": "41:24:0",
+                        "target": {
+                            "ast_type": "Name",
+                            "col_offset": 4,
+                            "end_col_offset": 10,
+                            "end_lineno": 4,
+                            "id": "setter",
+                            "lineno": 4,
+                            "node_id": 3,
+                            "src": "41:6:0"
+                        },
+                        "value": null
+                    },
+                    {
+                        "annotation": {
+                            "ast_type": "Name",
+                            "col_offset": 11,
+                            "end_col_offset": 17,
+                            "end_lineno": 5,
+                            "id": "int128",
+                            "lineno": 5,
+                            "node_id": 13,
+                            "src": "77:6:0"
+                        },
+                        "ast_type": "AnnAssign",
+                        "col_offset": 4,
+                        "end_col_offset": 17,
+                        "end_lineno": 5,
+                        "lineno": 5,
+                        "node_id": 10,
+                        "simple": 1,
+                        "src": "70:13:0",
+                        "target": {
+                            "ast_type": "Name",
+                            "col_offset": 4,
+                            "end_col_offset": 9,
+                            "end_lineno": 5,
+                            "id": "value",
+                            "lineno": 5,
+                            "node_id": 11,
+                            "src": "70:5:0"
+                        },
+                        "value": null
+                    }
+                ],
+                "col_offset": 0,
+                "end_col_offset": 17,
+                "end_lineno": 5,
+                "lineno": 3,
+                "name": "DataChange",
+                "node_id": 1,
+                "src": "19:64:0"
+            },
+            {
+                "annotation": {
+                    "args": [
+                        {
+                            "ast_type": "Name",
+                            "col_offset": 19,
+                            "end_col_offset": 25,
+                            "end_lineno": 7,
+                            "id": "int128",
+                            "lineno": 7,
+                            "node_id": 21,
+                            "src": "104:6:0"
+                        }
+                    ],
+                    "ast_type": "Call",
+                    "col_offset": 12,
+                    "end_col_offset": 26,
+                    "end_lineno": 7,
+                    "func": {
+                        "ast_type": "Name",
+                        "col_offset": 12,
+                        "end_col_offset": 18,
+                        "end_lineno": 7,
+                        "id": "public",
+                        "lineno": 7,
+                        "node_id": 19,
+                        "src": "97:6:0"
+                    },
+                    "keyword": null,
+                    "keywords": [],
+                    "lineno": 7,
+                    "node_id": 18,
+                    "src": "97:14:0"
+                },
+                "ast_type": "AnnAssign",
+                "col_offset": 0,
+                "end_col_offset": 26,
+                "end_lineno": 7,
+                "lineno": 7,
+                "node_id": 15,
+                "simple": 1,
+                "src": "85:26:0",
+                "target": {
+                    "ast_type": "Name",
+                    "col_offset": 0,
+                    "end_col_offset": 10,
+                    "end_lineno": 7,
+                    "id": "storedData",
+                    "lineno": 7,
+                    "node_id": 16,
+                    "src": "85:10:0"
+                },
+                "value": null
+            },
+            {
+                "args": {
+                    "args": [
+                        {
+                            "annotation": {
+                                "ast_type": "Name",
+                                "col_offset": 17,
+                                "end_col_offset": 23,
+                                "end_lineno": 10,
+                                "id": "int128",
+                                "lineno": 10,
+                                "node_id": 26,
+                                "src": "140:6:0"
+                            },
+                            "arg": "_x",
+                            "ast_type": "arg",
+                            "col_offset": 13,
+                            "end_col_offset": 23,
+                            "end_lineno": 10,
+                            "lineno": 10,
+                            "node_id": 25,
+                            "src": "136:10:0"
+                        }
+                    ],
+                    "ast_type": "arguments",
+                    "col_offset": 13,
+                    "default": null,
+                    "defaults": [],
+                    "end_col_offset": 23,
+                    "end_lineno": 10,
+                    "lineno": 10,
+                    "node_id": 24,
+                    "src": "136:10:0"
+                },
+                "ast_type": "FunctionDef",
+                "body": [
+                    {
+                        "ast_type": "Assign",
+                        "col_offset": 2,
+                        "end_col_offset": 22,
+                        "end_lineno": 11,
+                        "lineno": 11,
+                        "node_id": 28,
+                        "src": "151:20:0",
+                        "target": {
+                            "ast_type": "Attribute",
+                            "attr": "storedData",
+                            "col_offset": 2,
+                            "end_col_offset": 17,
+                            "end_lineno": 11,
+                            "lineno": 11,
+                            "node_id": 29,
+                            "src": "151:15:0",
+                            "value": {
+                                "ast_type": "Name",
+                                "col_offset": 2,
+                                "end_col_offset": 6,
+                                "end_lineno": 11,
+                                "id": "self",
+                                "lineno": 11,
+                                "node_id": 30,
+                                "src": "151:4:0"
+                            }
+                        },
+                        "value": {
+                            "ast_type": "Name",
+                            "col_offset": 20,
+                            "end_col_offset": 22,
+                            "end_lineno": 11,
+                            "id": "_x",
+                            "lineno": 11,
+                            "node_id": 33,
+                            "src": "169:2:0"
+                        }
+                    }
+                ],
+                "col_offset": 0,
+                "decorator_list": [
+                    {
+                        "ast_type": "Name",
+                        "col_offset": 1,
+                        "end_col_offset": 9,
+                        "end_lineno": 9,
+                        "id": "external",
+                        "lineno": 9,
+                        "node_id": 35,
+                        "src": "114:8:0"
+                    }
+                ],
+                "doc_string": null,
+                "end_col_offset": 22,
+                "end_lineno": 11,
+                "lineno": 10,
+                "name": "__init__",
+                "node_id": 23,
+                "pos": null,
+                "returns": null,
+                "src": "123:48:0"
+            },
+            {
+                "args": {
+                    "args": [
+                        {
+                            "annotation": {
+                                "ast_type": "Name",
+                                "col_offset": 12,
+                                "end_col_offset": 18,
+                                "end_lineno": 14,
+                                "id": "int128",
+                                "lineno": 14,
+                                "node_id": 40,
+                                "src": "195:6:0"
+                            },
+                            "arg": "_x",
+                            "ast_type": "arg",
+                            "col_offset": 8,
+                            "end_col_offset": 18,
+                            "end_lineno": 14,
+                            "lineno": 14,
+                            "node_id": 39,
+                            "src": "191:10:0"
+                        }
+                    ],
+                    "ast_type": "arguments",
+                    "col_offset": 8,
+                    "default": null,
+                    "defaults": [],
+                    "end_col_offset": 18,
+                    "end_lineno": 14,
+                    "lineno": 14,
+                    "node_id": 38,
+                    "src": "191:10:0"
+                },
+                "ast_type": "FunctionDef",
+                "body": [
+                    {
+                        "ast_type": "Assert",
+                        "col_offset": 2,
+                        "end_col_offset": 38,
+                        "end_lineno": 15,
+                        "lineno": 15,
+                        "msg": {
+                            "ast_type": "Str",
+                            "col_offset": 18,
+                            "end_col_offset": 38,
+                            "end_lineno": 15,
+                            "lineno": 15,
+                            "node_id": 48,
+                            "src": "222:20:0",
+                            "value": "No negative values"
+                        },
+                        "node_id": 42,
+                        "src": "206:36:0",
+                        "test": {
+                            "ast_type": "Compare",
+                            "col_offset": 9,
+                            "end_col_offset": 16,
+                            "end_lineno": 15,
+                            "left": {
+                                "ast_type": "Name",
+                                "col_offset": 9,
+                                "end_col_offset": 11,
+                                "end_lineno": 15,
+                                "id": "_x",
+                                "lineno": 15,
+                                "node_id": 44,
+                                "src": "213:2:0"
+                            },
+                            "lineno": 15,
+                            "node_id": 43,
+                            "op": {
+                                "ast_type": "GtE",
+                                "col_offset": 9,
+                                "end_col_offset": 16,
+                                "end_lineno": 15,
+                                "lineno": 15,
+                                "node_id": 46,
+                                "src": "213:7:0"
+                            },
+                            "right": {
+                                "ast_type": "Int",
+                                "col_offset": 15,
+                                "end_col_offset": 16,
+                                "end_lineno": 15,
+                                "lineno": 15,
+                                "node_id": 47,
+                                "src": "219:1:0",
+                                "value": 0
+                            },
+                            "src": "213:7:0"
+                        }
+                    },
+                    {
+                        "ast_type": "Assert",
+                        "col_offset": 2,
+                        "end_col_offset": 78,
+                        "end_lineno": 16,
+                        "lineno": 16,
+                        "msg": {
+                            "ast_type": "Str",
+                            "col_offset": 32,
+                            "end_col_offset": 78,
+                            "end_lineno": 16,
+                            "lineno": 16,
+                            "node_id": 57,
+                            "src": "275:46:0",
+                            "value": "Storage is locked when 100 or more is stored"
+                        },
+                        "node_id": 49,
+                        "src": "245:76:0",
+                        "test": {
+                            "ast_type": "Compare",
+                            "col_offset": 9,
+                            "end_col_offset": 30,
+                            "end_lineno": 16,
+                            "left": {
+                                "ast_type": "Attribute",
+                                "attr": "storedData",
+                                "col_offset": 9,
+                                "end_col_offset": 24,
+                                "end_lineno": 16,
+                                "lineno": 16,
+                                "node_id": 51,
+                                "src": "252:15:0",
+                                "value": {
+                                    "ast_type": "Name",
+                                    "col_offset": 9,
+                                    "end_col_offset": 13,
+                                    "end_lineno": 16,
+                                    "id": "self",
+                                    "lineno": 16,
+                                    "node_id": 52,
+                                    "src": "252:4:0"
+                                }
+                            },
+                            "lineno": 16,
+                            "node_id": 50,
+                            "op": {
+                                "ast_type": "Lt",
+                                "col_offset": 9,
+                                "end_col_offset": 30,
+                                "end_lineno": 16,
+                                "lineno": 16,
+                                "node_id": 55,
+                                "src": "252:21:0"
+                            },
+                            "right": {
+                                "ast_type": "Int",
+                                "col_offset": 27,
+                                "end_col_offset": 30,
+                                "end_lineno": 16,
+                                "lineno": 16,
+                                "node_id": 56,
+                                "src": "270:3:0",
+                                "value": 100
+                            },
+                            "src": "252:21:0"
+                        }
+                    },
+                    {
+                        "ast_type": "Assign",
+                        "col_offset": 2,
+                        "end_col_offset": 22,
+                        "end_lineno": 17,
+                        "lineno": 17,
+                        "node_id": 58,
+                        "src": "324:20:0",
+                        "target": {
+                            "ast_type": "Attribute",
+                            "attr": "storedData",
+                            "col_offset": 2,
+                            "end_col_offset": 17,
+                            "end_lineno": 17,
+                            "lineno": 17,
+                            "node_id": 59,
+                            "src": "324:15:0",
+                            "value": {
+                                "ast_type": "Name",
+                                "col_offset": 2,
+                                "end_col_offset": 6,
+                                "end_lineno": 17,
+                                "id": "self",
+                                "lineno": 17,
+                                "node_id": 60,
+                                "src": "324:4:0"
+                            }
+                        },
+                        "value": {
+                            "ast_type": "Name",
+                            "col_offset": 20,
+                            "end_col_offset": 22,
+                            "end_lineno": 17,
+                            "id": "_x",
+                            "lineno": 17,
+                            "node_id": 63,
+                            "src": "342:2:0"
+                        }
+                    },
+                    {
+                        "ast_type": "Log",
+                        "col_offset": 2,
+                        "end_col_offset": 32,
+                        "end_lineno": 18,
+                        "lineno": 18,
+                        "node_id": 66,
+                        "src": "347:30:0",
+                        "value": {
+                            "args": [
+                                {
+                                    "ast_type": "Attribute",
+                                    "attr": "sender",
+                                    "col_offset": 17,
+                                    "end_col_offset": 27,
+                                    "end_lineno": 18,
+                                    "lineno": 18,
+                                    "node_id": 70,
+                                    "src": "362:10:0",
+                                    "value": {
+                                        "ast_type": "Name",
+                                        "col_offset": 17,
+                                        "end_col_offset": 20,
+                                        "end_lineno": 18,
+                                        "id": "msg",
+                                        "lineno": 18,
+                                        "node_id": 71,
+                                        "src": "362:3:0"
+                                    }
+                                },
+                                {
+                                    "ast_type": "Name",
+                                    "col_offset": 31,
+                                    "end_col_offset": 32,
+                                    "end_lineno": 18,
+                                    "id": "_x",
+                                    "lineno": 18,
+                                    "node_id": 74,
+                                    "src": "376:1:0"
+                                }
+                            ],
+                            "ast_type": "Call",
+                            "col_offset": 6,
+                            "end_col_offset": 32,
+                            "end_lineno": 18,
+                            "func": {
+                                "ast_type": "Name",
+                                "col_offset": 6,
+                                "end_col_offset": 16,
+                                "end_lineno": 18,
+                                "id": "DataChange",
+                                "lineno": 18,
+                                "node_id": 68,
+                                "src": "351:10:0"
+                            },
+                            "keyword": null,
+                            "keywords": [],
+                            "lineno": 18,
+                            "node_id": 67,
+                            "src": "351:26:0"
+                        }
+                    }
+                ],
+                "col_offset": 0,
+                "decorator_list": [
+                    {
+                        "ast_type": "Name",
+                        "col_offset": 1,
+                        "end_col_offset": 9,
+                        "end_lineno": 13,
+                        "id": "external",
+                        "lineno": 13,
+                        "node_id": 76,
+                        "src": "174:8:0"
+                    }
+                ],
+                "doc_string": null,
+                "end_col_offset": 32,
+                "end_lineno": 18,
+                "lineno": 14,
+                "name": "set",
+                "node_id": 37,
+                "pos": null,
+                "returns": null,
+                "src": "183:194:0"
+            },
+            {
+                "args": {
+                    "args": [],
+                    "ast_type": "arguments",
+                    "col_offset": 0,
+                    "default": null,
+                    "defaults": [],
+                    "end_col_offset": 3,
+                    "end_lineno": 21,
+                    "lineno": 21,
+                    "node_id": 79,
+                    "src": "389:3:0"
+                },
+                "ast_type": "FunctionDef",
+                "body": [
+                    {
+                        "ast_type": "Assign",
+                        "col_offset": 2,
+                        "end_col_offset": 21,
+                        "end_lineno": 22,
+                        "lineno": 22,
+                        "node_id": 80,
+                        "src": "404:19:0",
+                        "target": {
+                            "ast_type": "Attribute",
+                            "attr": "storedData",
+                            "col_offset": 2,
+                            "end_col_offset": 17,
+                            "end_lineno": 22,
+                            "lineno": 22,
+                            "node_id": 81,
+                            "src": "404:15:0",
+                            "value": {
+                                "ast_type": "Name",
+                                "col_offset": 2,
+                                "end_col_offset": 6,
+                                "end_lineno": 22,
+                                "id": "self",
+                                "lineno": 22,
+                                "node_id": 82,
+                                "src": "404:4:0"
+                            }
+                        },
+                        "value": {
+                            "ast_type": "Int",
+                            "col_offset": 20,
+                            "end_col_offset": 21,
+                            "end_lineno": 22,
+                            "lineno": 22,
+                            "node_id": 85,
+                            "src": "422:1:0",
+                            "value": 0
+                        }
+                    }
+                ],
+                "col_offset": 0,
+                "decorator_list": [
+                    {
+                        "ast_type": "Name",
+                        "col_offset": 1,
+                        "end_col_offset": 9,
+                        "end_lineno": 20,
+                        "id": "external",
+                        "lineno": 20,
+                        "node_id": 86,
+                        "src": "380:8:0"
+                    }
+                ],
+                "doc_string": null,
+                "end_col_offset": 21,
+                "end_lineno": 22,
+                "lineno": 21,
+                "name": "reset",
+                "node_id": 78,
+                "pos": null,
+                "returns": null,
+                "src": "389:34:0"
+            }
+        ],
+        "col_offset": 0,
+        "doc_string": null,
+        "end_col_offset": 21,
+        "end_lineno": 22,
+        "lineno": 1,
+        "name": "contracts/Storage.vy",
+        "node_id": 0,
+        "src": "0:423:0"
+    },
+    "bytecode": "0x60206101cd60003960005180600f0b81186101c8576040526040516000556101916100366300000000396101916000016300000000f3600436101561000d57610186565b60003560e01c3461018c5763795313b0811861015b5760043580600f0b811861018c576040526000604051121561009b5760126060527f4e6f206e656761746976652076616c75657300000000000000000000000000006080526060506060518060800181600003601f1636823750506308c379a06020526020604052601f19601f6060510116604401603cfd5b60646000541261012657602c6060527f53746f72616765206973206c6f636b6564207768656e20313030206f72206d6f6080527f72652069732073746f726564000000000000000000000000000000000000000060a0526060506060518060800181600003601f1636823750506308c379a06020526020604052601f19601f6060510116604401603cfd5b604051600055337ffb6d8d06b5526bd9f01d84ce48bff752537dec8de288d28dc9254d02f59f954160405160605260206060a2005b63d826f88f811861016d576000600055005b632a1afcd981186101845760005460405260206040f35b505b60006000fd5b600080fd005b600080fd",
+    "bytecodeSha1": "c4e0b2a41a97dab8974e4c2d284eb175d2af77de",
+    "compiler": {
+        "evm_version": "istanbul",
+        "version": "0.3.3"
+    },
+    "contractName": "Storage",
+    "coverageMap": {
+        "branches": {
+            "0": {
+                "Storage.set": {
+                    "1": [
+                        206,
+                        242,
+                        true
+                    ],
+                    "3": [
+                        245,
+                        321,
+                        true
+                    ]
+                }
+            }
+        },
+        "statements": {
+            "0": {
+                "Storage.reset": {
+                    "6": [
+                        404,
+                        423
+                    ]
+                },
+                "Storage.set": {
+                    "0": [
+                        206,
+                        242
+                    ],
+                    "2": [
+                        245,
+                        321
+                    ],
+                    "4": [
+                        324,
+                        344
+                    ],
+                    "5": [
+                        347,
+                        377
+                    ]
+                }
+            }
+        }
+    },
+    "dependencies": [],
+    "deployedBytecode": "0x600436101561000d57610186565b60003560e01c3461018c5763795313b0811861015b5760043580600f0b811861018c576040526000604051121561009b5760126060527f4e6f206e656761746976652076616c75657300000000000000000000000000006080526060506060518060800181600003601f1636823750506308c379a06020526020604052601f19601f6060510116604401603cfd5b60646000541261012657602c6060527f53746f72616765206973206c6f636b6564207768656e20313030206f72206d6f6080527f72652069732073746f726564000000000000000000000000000000000000000060a0526060506060518060800181600003601f1636823750506308c379a06020526020604052601f19601f6060510116604401603cfd5b604051600055337ffb6d8d06b5526bd9f01d84ce48bff752537dec8de288d28dc9254d02f59f954160405160605260206060a2005b63d826f88f811861016d576000600055005b632a1afcd981186101845760005460405260206040f35b505b60006000fd5b600080fd",
+    "deployedSourceMap": "-1:-1:0:-;;;;;:::-;;:::-;:::-;;;;;;;:::-;;;;183:194;:::-;-1:-1;;;;;;;;:::-;191:10;;219:1;213:2;:7;-1:-1;206:36;;:::-;-1:-1;;222:20;-1:-1;;222:20;;206:36;-1:-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;206:36::-;270:3;252:15;:21;;245:76;:::-;-1:-1;;275:46;-1:-1;;275:46;-1:-1;;275:46;;245:76;-1:-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;245:76::-;342:2;324:20;:15;:20;362:10;347:30;376:1;-1:-1;;;;347:30;;-1:-1;183:194::-;-1:-1;;;389:34;:::-;422:1;404:15;:19;-1:-1;389:34::-;-1:-1;;;97:14;:::-;-1:-1;;;;;97:14;-1:-1;97:14::-;-1:-1;:::-;;;;:::-;;;;",
+    "language": "Vyper",
+    "natspec": {
+        "methods": {}
+    },
+    "offset": [
+        0,
+        423
+    ],
+    "opcodes": "PUSH1 0x4 CALLDATASIZE LT ISZERO PUSH2 0x0D JUMPI PUSH2 0x186 JUMP JUMPDEST PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR CALLVALUE PUSH2 0x18C JUMPI PUSH4 0x795313B0 DUP2 XOR PUSH2 0x15B JUMPI PUSH1 0x4 CALLDATALOAD DUP1 PUSH1 0xF SIGNEXTEND DUP2 XOR PUSH2 0x18C JUMPI PUSH1 0x40 MSTORE PUSH1 0x0 PUSH1 0x40 MLOAD SLT ISZERO PUSH2 0x09B JUMPI PUSH1 0x12 PUSH1 0x60 MSTORE PUSH32 0x4E6F206E656761746976652076616C75657300000000000000 PUSH1 0x80 MSTORE PUSH1 0x60 POP PUSH1 0x60 MLOAD DUP1 PUSH1 0x80 ADD DUP2 PUSH1 0x0 SUB PUSH1 0x1F AND CALLDATASIZE DUP3 CALLDATACOPY POP POP PUSH4 0x8C379A0 PUSH1 0x20 MSTORE PUSH1 0x20 PUSH1 0x40 MSTORE PUSH1 0x1F NOT PUSH1 0x1F PUSH1 0x60 MLOAD ADD AND PUSH1 0x44 ADD PUSH1 0x3C REVERT JUMPDEST PUSH1 0x64 PUSH1 0x0 SLOAD SLT PUSH2 0x126 JUMPI PUSH1 0x2C PUSH1 0x60 MSTORE PUSH32 0x53746F72616765206973206C6F636B6564207768656E20313030206F72206D6F PUSH1 0x80 MSTORE PUSH32 0x72652069732073746F72656400000000000000000000 PUSH1 0xA0 MSTORE PUSH1 0x60 POP PUSH1 0x60 MLOAD DUP1 PUSH1 0x80 ADD DUP2 PUSH1 0x0 SUB PUSH1 0x1F AND CALLDATASIZE DUP3 CALLDATACOPY POP POP PUSH4 0x8C379A0 PUSH1 0x20 MSTORE PUSH1 0x20 PUSH1 0x40 MSTORE PUSH1 0x1F NOT PUSH1 0x1F PUSH1 0x60 MLOAD ADD AND PUSH1 0x44 ADD PUSH1 0x3C REVERT JUMPDEST PUSH1 0x40 MLOAD PUSH1 0x0 SSTORE CALLER PUSH32 0xFB6D8D6B5526BD9F01D84CE48BFF752537DEC8DE288D28DC9254D2F59F9541 PUSH1 0x40 MLOAD PUSH1 0x60 MSTORE PUSH1 0x20 PUSH1 0x60 LOG2 STOP JUMPDEST PUSH4 0xD826F88F DUP2 XOR PUSH2 0x16D JUMPI PUSH1 0x0 PUSH1 0x0 SSTORE STOP JUMPDEST PUSH4 0x2A1AFCD9 DUP2 XOR PUSH2 0x184 JUMPI PUSH1 0x0 SLOAD PUSH1 0x40 MSTORE PUSH1 0x20 PUSH1 0x40 RETURN JUMPDEST POP JUMPDEST PUSH1 0x0 PUSH1 0x0 REVERT JUMPDEST PUSH1 0x0 DUP1 REVERT",
+    "pcMap": {
+        "0": {
+            "offset": [
+                0,
+                423
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "value": "0x4"
+        },
+        "2": {
+            "op": "CALLDATASIZE"
+        },
+        "3": {
+            "op": "LT"
+        },
+        "4": {
+            "op": "ISZERO"
+        },
+        "5": {
+            "op": "PUSH2",
+            "value": "0x0D"
+        },
+        "8": {
+            "op": "JUMPI"
+        },
+        "9": {
+            "op": "PUSH2",
+            "value": "0x186"
+        },
+        "12": {
+            "op": "JUMP"
+        },
+        "13": {
+            "op": "JUMPDEST"
+        },
+        "14": {
+            "op": "PUSH1",
+            "value": "0x0"
+        },
+        "16": {
+            "op": "CALLDATALOAD"
+        },
+        "17": {
+            "op": "PUSH1",
+            "value": "0xE0"
+        },
+        "19": {
+            "op": "SHR"
+        },
+        "20": {
+            "op": "CALLVALUE"
+        },
+        "21": {
+            "op": "PUSH2",
+            "value": "0x18C"
+        },
+        "24": {
+            "dev": "Cannot send ether to nonpayable function",
+            "offset": [
+                0,
+                0
+            ],
+            "op": "JUMPI",
+            "path": "0"
+        },
+        "25": {
+            "op": "PUSH4",
+            "value": "0x795313B0"
+        },
+        "30": {
+            "op": "DUP2"
+        },
+        "31": {
+            "op": "XOR"
+        },
+        "32": {
+            "fn": "Storage.set",
+            "offset": [
+                183,
+                377
+            ],
+            "op": "PUSH2",
+            "path": "0",
+            "value": "0x15B"
+        },
+        "35": {
+            "fn": "Storage.set",
+            "offset": [
+                183,
+                377
+            ],
+            "op": "JUMPI",
+            "path": "0"
+        },
+        "36": {
+            "op": "PUSH1",
+            "value": "0x4"
+        },
+        "38": {
+            "op": "CALLDATALOAD"
+        },
+        "39": {
+            "op": "DUP1"
+        },
+        "40": {
+            "op": "PUSH1",
+            "value": "0xF"
+        },
+        "42": {
+            "op": "SIGNEXTEND"
+        },
+        "43": {
+            "op": "DUP2"
+        },
+        "44": {
+            "op": "XOR"
+        },
+        "45": {
+            "op": "PUSH2",
+            "value": "0x18C"
+        },
+        "48": {
+            "op": "JUMPI"
+        },
+        "49": {
+            "fn": "Storage.set",
+            "offset": [
+                191,
+                201
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "value": "0x40"
+        },
+        "51": {
+            "fn": "Storage.set",
+            "offset": [
+                191,
+                201
+            ],
+            "op": "MSTORE",
+            "path": "0"
+        },
+        "52": {
+            "fn": "Storage.set",
+            "offset": [
+                219,
+                220
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "statement": 0,
+            "value": "0x0"
+        },
+        "54": {
+            "fn": "Storage.set",
+            "offset": [
+                213,
+                215
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "value": "0x40"
+        },
+        "56": {
+            "fn": "Storage.set",
+            "offset": [
+                213,
+                220
+            ],
+            "op": "MLOAD",
+            "path": "0"
+        },
+        "57": {
+            "op": "SLT"
+        },
+        "58": {
+            "fn": "Storage.set",
+            "offset": [
+                206,
+                242
+            ],
+            "op": "ISZERO",
+            "path": "0"
+        },
+        "59": {
+            "fn": "Storage.set",
+            "offset": [
+                206,
+                242
+            ],
+            "op": "PUSH2",
+            "path": "0",
+            "value": "0x09B"
+        },
+        "62": {
+            "branch": 1,
+            "fn": "Storage.set",
+            "offset": [
+                206,
+                242
+            ],
+            "op": "JUMPI",
+            "path": "0"
+        },
+        "63": {
+            "op": "PUSH1",
+            "value": "0x12"
+        },
+        "65": {
+            "op": "PUSH1",
+            "value": "0x60"
+        },
+        "67": {
+            "fn": "Storage.set",
+            "offset": [
+                222,
+                242
+            ],
+            "op": "MSTORE",
+            "path": "0"
+        },
+        "68": {
+            "op": "PUSH32",
+            "value": "0x4E6F206E656761746976652076616C75657300000000000000"
+        },
+        "101": {
+            "op": "PUSH1",
+            "value": "0x80"
+        },
+        "103": {
+            "fn": "Storage.set",
+            "offset": [
+                222,
+                242
+            ],
+            "op": "MSTORE",
+            "path": "0"
+        },
+        "104": {
+            "fn": "Storage.set",
+            "offset": [
+                222,
+                242
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "value": "0x60"
+        },
+        "106": {
+            "fn": "Storage.set",
+            "offset": [
+                206,
+                242
+            ],
+            "op": "POP",
+            "path": "0"
+        },
+        "107": {
+            "op": "PUSH1",
+            "value": "0x60"
+        },
+        "109": {
+            "op": "MLOAD"
+        },
+        "110": {
+            "op": "DUP1"
+        },
+        "111": {
+            "op": "PUSH1",
+            "value": "0x80"
+        },
+        "113": {
+            "op": "ADD"
+        },
+        "114": {
+            "op": "DUP2"
+        },
+        "115": {
+            "op": "PUSH1",
+            "value": "0x0"
+        },
+        "117": {
+            "op": "SUB"
+        },
+        "118": {
+            "op": "PUSH1",
+            "value": "0x1F"
+        },
+        "120": {
+            "op": "AND"
+        },
+        "121": {
+            "op": "CALLDATASIZE"
+        },
+        "122": {
+            "op": "DUP3"
+        },
+        "123": {
+            "op": "CALLDATACOPY"
+        },
+        "124": {
+            "op": "POP"
+        },
+        "125": {
+            "op": "POP"
+        },
+        "126": {
+            "op": "PUSH4",
+            "value": "0x8C379A0"
+        },
+        "131": {
+            "op": "PUSH1",
+            "value": "0x20"
+        },
+        "133": {
+            "op": "MSTORE"
+        },
+        "134": {
+            "op": "PUSH1",
+            "value": "0x20"
+        },
+        "136": {
+            "op": "PUSH1",
+            "value": "0x40"
+        },
+        "138": {
+            "op": "MSTORE"
+        },
+        "139": {
+            "op": "PUSH1",
+            "value": "0x1F"
+        },
+        "141": {
+            "op": "NOT"
+        },
+        "142": {
+            "op": "PUSH1",
+            "value": "0x1F"
+        },
+        "144": {
+            "op": "PUSH1",
+            "value": "0x60"
+        },
+        "146": {
+            "op": "MLOAD"
+        },
+        "147": {
+            "op": "ADD"
+        },
+        "148": {
+            "op": "AND"
+        },
+        "149": {
+            "op": "PUSH1",
+            "value": "0x44"
+        },
+        "151": {
+            "op": "ADD"
+        },
+        "152": {
+            "op": "PUSH1",
+            "value": "0x3C"
+        },
+        "154": {
+            "op": "REVERT"
+        },
+        "155": {
+            "fn": "Storage.set",
+            "offset": [
+                206,
+                242
+            ],
+            "op": "JUMPDEST",
+            "path": "0"
+        },
+        "156": {
+            "fn": "Storage.set",
+            "offset": [
+                270,
+                273
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "statement": 2,
+            "value": "0x64"
+        },
+        "158": {
+            "fn": "Storage.set",
+            "offset": [
+                252,
+                267
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "value": "0x0"
+        },
+        "160": {
+            "fn": "Storage.set",
+            "offset": [
+                252,
+                273
+            ],
+            "op": "SLOAD",
+            "path": "0"
+        },
+        "161": {
+            "fn": "Storage.set",
+            "offset": [
+                252,
+                273
+            ],
+            "op": "SLT",
+            "path": "0"
+        },
+        "162": {
+            "fn": "Storage.set",
+            "offset": [
+                245,
+                321
+            ],
+            "op": "PUSH2",
+            "path": "0",
+            "value": "0x126"
+        },
+        "165": {
+            "branch": 3,
+            "fn": "Storage.set",
+            "offset": [
+                245,
+                321
+            ],
+            "op": "JUMPI",
+            "path": "0"
+        },
+        "166": {
+            "op": "PUSH1",
+            "value": "0x2C"
+        },
+        "168": {
+            "op": "PUSH1",
+            "value": "0x60"
+        },
+        "170": {
+            "fn": "Storage.set",
+            "offset": [
+                275,
+                321
+            ],
+            "op": "MSTORE",
+            "path": "0"
+        },
+        "171": {
+            "op": "PUSH32",
+            "value": "0x53746F72616765206973206C6F636B6564207768656E20313030206F72206D6F"
+        },
+        "204": {
+            "op": "PUSH1",
+            "value": "0x80"
+        },
+        "206": {
+            "fn": "Storage.set",
+            "offset": [
+                275,
+                321
+            ],
+            "op": "MSTORE",
+            "path": "0"
+        },
+        "207": {
+            "op": "PUSH32",
+            "value": "0x72652069732073746F72656400000000000000000000"
+        },
+        "240": {
+            "op": "PUSH1",
+            "value": "0xA0"
+        },
+        "242": {
+            "fn": "Storage.set",
+            "offset": [
+                275,
+                321
+            ],
+            "op": "MSTORE",
+            "path": "0"
+        },
+        "243": {
+            "fn": "Storage.set",
+            "offset": [
+                275,
+                321
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "value": "0x60"
+        },
+        "245": {
+            "fn": "Storage.set",
+            "offset": [
+                245,
+                321
+            ],
+            "op": "POP",
+            "path": "0"
+        },
+        "246": {
+            "op": "PUSH1",
+            "value": "0x60"
+        },
+        "248": {
+            "op": "MLOAD"
+        },
+        "249": {
+            "op": "DUP1"
+        },
+        "250": {
+            "op": "PUSH1",
+            "value": "0x80"
+        },
+        "252": {
+            "op": "ADD"
+        },
+        "253": {
+            "op": "DUP2"
+        },
+        "254": {
+            "op": "PUSH1",
+            "value": "0x0"
+        },
+        "256": {
+            "op": "SUB"
+        },
+        "257": {
+            "op": "PUSH1",
+            "value": "0x1F"
+        },
+        "259": {
+            "op": "AND"
+        },
+        "260": {
+            "op": "CALLDATASIZE"
+        },
+        "261": {
+            "op": "DUP3"
+        },
+        "262": {
+            "op": "CALLDATACOPY"
+        },
+        "263": {
+            "op": "POP"
+        },
+        "264": {
+            "op": "POP"
+        },
+        "265": {
+            "op": "PUSH4",
+            "value": "0x8C379A0"
+        },
+        "270": {
+            "op": "PUSH1",
+            "value": "0x20"
+        },
+        "272": {
+            "op": "MSTORE"
+        },
+        "273": {
+            "op": "PUSH1",
+            "value": "0x20"
+        },
+        "275": {
+            "op": "PUSH1",
+            "value": "0x40"
+        },
+        "277": {
+            "op": "MSTORE"
+        },
+        "278": {
+            "op": "PUSH1",
+            "value": "0x1F"
+        },
+        "280": {
+            "op": "NOT"
+        },
+        "281": {
+            "op": "PUSH1",
+            "value": "0x1F"
+        },
+        "283": {
+            "op": "PUSH1",
+            "value": "0x60"
+        },
+        "285": {
+            "op": "MLOAD"
+        },
+        "286": {
+            "op": "ADD"
+        },
+        "287": {
+            "op": "AND"
+        },
+        "288": {
+            "op": "PUSH1",
+            "value": "0x44"
+        },
+        "290": {
+            "op": "ADD"
+        },
+        "291": {
+            "op": "PUSH1",
+            "value": "0x3C"
+        },
+        "293": {
+            "op": "REVERT"
+        },
+        "294": {
+            "fn": "Storage.set",
+            "offset": [
+                245,
+                321
+            ],
+            "op": "JUMPDEST",
+            "path": "0"
+        },
+        "295": {
+            "fn": "Storage.set",
+            "offset": [
+                342,
+                344
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "statement": 4,
+            "value": "0x40"
+        },
+        "297": {
+            "fn": "Storage.set",
+            "offset": [
+                324,
+                344
+            ],
+            "op": "MLOAD",
+            "path": "0"
+        },
+        "298": {
+            "fn": "Storage.set",
+            "offset": [
+                324,
+                339
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "value": "0x0"
+        },
+        "300": {
+            "fn": "Storage.set",
+            "offset": [
+                324,
+                344
+            ],
+            "op": "SSTORE",
+            "path": "0"
+        },
+        "301": {
+            "fn": "Storage.set",
+            "offset": [
+                362,
+                372
+            ],
+            "op": "CALLER",
+            "path": "0",
+            "statement": 5
+        },
+        "302": {
+            "fn": "Storage.set",
+            "offset": [
+                347,
+                377
+            ],
+            "op": "PUSH32",
+            "path": "0",
+            "value": "0xFB6D8D6B5526BD9F01D84CE48BFF752537DEC8DE288D28DC9254D2F59F9541"
+        },
+        "335": {
+            "fn": "Storage.set",
+            "offset": [
+                376,
+                377
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "value": "0x40"
+        },
+        "337": {
+            "op": "MLOAD"
+        },
+        "338": {
+            "op": "PUSH1",
+            "value": "0x60"
+        },
+        "340": {
+            "op": "MSTORE"
+        },
+        "341": {
+            "op": "PUSH1",
+            "value": "0x20"
+        },
+        "343": {
+            "fn": "Storage.set",
+            "offset": [
+                347,
+                377
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "value": "0x60"
+        },
+        "345": {
+            "fn": "Storage.set",
+            "offset": [
+                347,
+                377
+            ],
+            "op": "LOG2",
+            "path": "0"
+        },
+        "346": {
+            "op": "STOP"
+        },
+        "347": {
+            "fn": "Storage.set",
+            "offset": [
+                183,
+                377
+            ],
+            "op": "JUMPDEST",
+            "path": "0"
+        },
+        "348": {
+            "op": "PUSH4",
+            "value": "0xD826F88F"
+        },
+        "353": {
+            "op": "DUP2"
+        },
+        "354": {
+            "op": "XOR"
+        },
+        "355": {
+            "fn": "Storage.reset",
+            "offset": [
+                389,
+                423
+            ],
+            "op": "PUSH2",
+            "path": "0",
+            "value": "0x16D"
+        },
+        "358": {
+            "fn": "Storage.reset",
+            "offset": [
+                389,
+                423
+            ],
+            "op": "JUMPI",
+            "path": "0"
+        },
+        "359": {
+            "fn": "Storage.reset",
+            "offset": [
+                422,
+                423
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "statement": 6,
+            "value": "0x0"
+        },
+        "361": {
+            "fn": "Storage.reset",
+            "offset": [
+                404,
+                419
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "value": "0x0"
+        },
+        "363": {
+            "fn": "Storage.reset",
+            "offset": [
+                404,
+                423
+            ],
+            "op": "SSTORE",
+            "path": "0"
+        },
+        "364": {
+            "op": "STOP"
+        },
+        "365": {
+            "fn": "Storage.reset",
+            "offset": [
+                389,
+                423
+            ],
+            "op": "JUMPDEST",
+            "path": "0"
+        },
+        "366": {
+            "op": "PUSH4",
+            "value": "0x2A1AFCD9"
+        },
+        "371": {
+            "op": "DUP2"
+        },
+        "372": {
+            "op": "XOR"
+        },
+        "373": {
+            "offset": [
+                97,
+                111
+            ],
+            "op": "PUSH2",
+            "path": "0",
+            "value": "0x184"
+        },
+        "376": {
+            "offset": [
+                97,
+                111
+            ],
+            "op": "JUMPI",
+            "path": "0"
+        },
+        "377": {
+            "op": "PUSH1",
+            "value": "0x0"
+        },
+        "379": {
+            "op": "SLOAD"
+        },
+        "380": {
+            "op": "PUSH1",
+            "value": "0x40"
+        },
+        "382": {
+            "op": "MSTORE"
+        },
+        "383": {
+            "op": "PUSH1",
+            "value": "0x20"
+        },
+        "385": {
+            "offset": [
+                97,
+                111
+            ],
+            "op": "PUSH1",
+            "path": "0",
+            "value": "0x40"
+        },
+        "387": {
+            "op": "RETURN"
+        },
+        "388": {
+            "offset": [
+                97,
+                111
+            ],
+            "op": "JUMPDEST",
+            "path": "0"
+        },
+        "389": {
+            "op": "POP"
+        },
+        "390": {
+            "op": "JUMPDEST"
+        },
+        "391": {
+            "op": "PUSH1",
+            "value": "0x0"
+        },
+        "393": {
+            "op": "PUSH1",
+            "value": "0x0"
+        },
+        "395": {
+            "op": "REVERT"
+        },
+        "396": {
+            "op": "JUMPDEST"
+        },
+        "397": {
+            "op": "PUSH1",
+            "value": "0x0"
+        },
+        "399": {
+            "op": "DUP1"
+        },
+        "400": {
+            "op": "REVERT",
+            "optimizer_revert": true
+        }
+    },
+    "sha1": "4a354bef198f0c9ba9ccb4e157c5720b5ba95d29",
+    "source": "# @version ^0.3.0\n\nevent DataChange:\n    setter: indexed(address)\n    value: int128\n\nstoredData: public(int128)\n\n@external\ndef __init__(_x: int128):\n  self.storedData = _x\n\n@external\ndef set(_x: int128):\n  assert _x >= 0, \"No negative values\"\n  assert self.storedData < 100, \"Storage is locked when 100 or more is stored\"\n  self.storedData = _x\n  log DataChange(msg.sender, _x)\n\n@external\ndef reset():\n  self.storedData = 0",
+    "sourceMap": "",
+    "sourcePath": "contracts/Storage.vy",
+    "type": "contract",
+    "deployment": {
+        "address": "0x65DFB4cE0C52559Bac889e40d8DcBD65242BAe76",
+        "chainid": "383414847825",
+        "blockHeight": 60044
+    }
+}
